@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = 10;
     public float jumpHeight = 1f;
     public float maxVelocity = 6f;
-    public float groundDistance = 1.1f;
+    public float groundDistance = 0.5f;
 
     public bool IsCarryingPatch;
     public GameObject CarriedLargePatch;

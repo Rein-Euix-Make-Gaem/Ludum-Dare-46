@@ -4,6 +4,8 @@ namespace Assets.Scripts
 {
     public struct InteractionEvent
     {
+        public Interactable sender;
+        public bool proxied;
         public float timestamp;
         public PlayerController player;
         public RaycastHit hit;
@@ -13,6 +15,8 @@ namespace Assets.Scripts
     {
         public bool canInteract = true;
         public float cooldown = 1f;
+        public Interactable[] proxies;
+        public float holdTime;
 
         private float nextInteraction;
 
@@ -31,7 +35,28 @@ namespace Assets.Scripts
         public void Interact(ref InteractionEvent ev)
         {
             OnInteract(ref ev);
+
             nextInteraction = Time.time + cooldown;
+
+            if (proxies != null)
+            {
+                foreach (var proxy in proxies)
+                {
+                    var proxyEvent = new InteractionEvent
+                    {
+                        proxied = true,
+                        sender = this,
+                        hit = ev.hit,
+                        player = ev.player,
+                        timestamp = ev.timestamp
+                    };
+
+                    if (proxy.CanInteract(ev.player))
+                    {
+                        proxy.Interact(ref proxyEvent);
+                    }
+                }
+            }
         }
     }
 }
