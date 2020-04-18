@@ -21,7 +21,7 @@ namespace Assets.Scripts.Interactions
 
                 if (renderer != null)
                 {
-                    renderer.material.color = toggled ? Color.red : Color.white;
+                    renderer.material.SetColor("Color_E01FD33C", toggled ? Color.red : Color.black);
                 }
             }
 
