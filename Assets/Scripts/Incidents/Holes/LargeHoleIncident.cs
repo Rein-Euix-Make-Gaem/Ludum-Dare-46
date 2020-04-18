@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallHoleIncident : Incident
+public class LargeHoleIncident : Incident
 {
     public List<HoleLocation> HoleLocations;
 
@@ -20,7 +20,7 @@ public class SmallHoleIncident : Incident
 
         if(inactiveLocations.Count > 0)
         {
-            inactiveLocations[Random.Range(0, inactiveLocations.Count)].CreateSmallHole();
+            inactiveLocations[Random.Range(0, inactiveLocations.Count)].CreateLargeHole();
         }
     }
 }
