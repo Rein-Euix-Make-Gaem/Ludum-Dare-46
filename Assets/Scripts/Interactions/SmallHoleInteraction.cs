@@ -13,9 +13,10 @@ public class SmallHoleInteraction : ToggleInteraction
     {
         base.OnInteract(ref ev);
 
-        if (target != null)
+        if (this.target != null)
         {
-            target.SetActive(false);
+            this.airParticles.Stop();
+            this.target.SetActive(false);
         }
     }
 
