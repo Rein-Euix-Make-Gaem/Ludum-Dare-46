@@ -69,16 +69,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (body.transform.position.y < jumpHeight)
-        {
-            Debug.Log("down");
-            body.AddForce(new Vector3(0, -4f, 0), ForceMode.VelocityChange);
-        }
-
         if (Input.GetButton("Jump"))
         {
             var jumpSpeed = CalculateJumpSpeed();
-            body.velocity = new Vector3(velocity.x, jumpSpeed, velocity.z);
+            var jumpVelocity = new Vector3(velocity.x, jumpSpeed, velocity.z);
+
+            body.velocity = jumpVelocity;
         }
     }
     
