@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Interactions
 {
-    public class ToggleInteraction: Interactable
+    public class ToggleInteraction : Interactable
     {
         public string objectName;
         public string activeTemplate;

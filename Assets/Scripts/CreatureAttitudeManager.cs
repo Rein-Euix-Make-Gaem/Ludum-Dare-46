@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CreatureAttitudeManager : MonoBehaviour
 {
@@ -12,12 +9,6 @@ public class CreatureAttitudeManager : MonoBehaviour
     public float BaseFreakingRate;
     public float FastCalmingModifier;
     public float FastFreakingModifier;
-
-    public float rOriginal;
-    public float r;
-    public float g;
-    public float b;
-
 
     [SerializeField]
     private bool IsFreakingOut;
@@ -33,10 +24,6 @@ public class CreatureAttitudeManager : MonoBehaviour
         this.IsFreakingOut = false;
         this.HasDistractions = true;
         this.IsPlayerPresent = false;
-        this.rOriginal = this.CreatureMaterial.color.r;
-        this.r = this.CreatureMaterial.color.r;
-        this.g = this.CreatureMaterial.color.g;
-        this.b = this.CreatureMaterial.color.b;
     }
 
     // Update is called once per frame
@@ -76,8 +63,7 @@ public class CreatureAttitudeManager : MonoBehaviour
                 ? 100 
                 : this.CurrentUpsetValue;
 
-        this.CreatureMaterial.SetColor("_Color", new Color(this.CurrentUpsetValue/20f, this.CreatureMaterial.color.g, this.CreatureMaterial.color.b));
-        this.r = this.CurrentUpsetValue / 20f;
+        CreatureMaterial.color = new Color(CurrentUpsetValue / 20f, CreatureMaterial.color.g, CreatureMaterial.color.b);
     }
 
     private void OnTriggerEnter(Collider collider)
