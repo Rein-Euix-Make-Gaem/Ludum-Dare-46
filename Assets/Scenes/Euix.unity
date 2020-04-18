@@ -183,12 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6372963cff0d34dba079b9113820f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  walkSpeed: 6
+  runSpeed: 10
   gravity: 10
   jumpHeight: 1
   maxVelocity: 10
   groundDistance: 1.1
-  interactionText: {fileID: 1901714849}
 --- !u!54 &48106485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 443890292}
   - component: {fileID: 443890291}
   - component: {fileID: 443890294}
+  - component: {fileID: 443890295}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -475,6 +476,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 150
   target: {fileID: 48106482}
+--- !u!114 &443890295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443890290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e73852a1318d7c45929834ea6dde0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 3
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 256
+  player: {fileID: 48106484}
+  interactionText: {fileID: 1901714849}
 --- !u!1 &1135335669
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,11 +854,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708861979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdcc295843242424f83633eda3908c28, type: 3}
+  m_Script: {fileID: 11500000, guid: aa87ce4738711d745b821de6b261e71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 1
-  description: activate
+  canInteract: 1
+  cooldown: 1
+  objectName: box
+  activeTemplate: 
+  inactiveTemplate: 
+  toggled: 0
+  target: {fileID: 1708861979}
 --- !u!1 &1901714847
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +940,7 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295

@@ -1,19 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] public float speed = 6f;
-    [SerializeField] public float gravity = 10;
-    [SerializeField] public float jumpHeight = 1f;
-    [SerializeField] public float maxVelocity = 6f;
-    [SerializeField] public float groundDistance = 1.1f;
-
-    public TMPro.TextMeshProUGUI interactionText;
+    public float walkSpeed = 6f;
+    public float runSpeed = 10f;
+    public float gravity = 10;
+    public float jumpHeight = 1f;
+    public float maxVelocity = 6f;
+    public float groundDistance = 1.1f;
 
     private bool grounded;
     private Rigidbody body;
@@ -41,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (grounded)
         {
+            var speed = Input.GetKey(KeyCode.LeftShift) ? walkSpeed : runSpeed;
             var x = Input.GetAxis("Horizontal");
             var z = Input.GetAxis("Vertical");
 
