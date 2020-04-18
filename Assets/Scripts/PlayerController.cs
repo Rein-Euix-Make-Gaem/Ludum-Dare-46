@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float maxVelocity = 6f;
     public float groundDistance = 1.1f;
 
+    private float speed;
+    private Vector3 direction;
     private bool grounded;
     private Rigidbody body;
 
@@ -31,20 +33,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckGround();
+
+        speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+
+        var x = Input.GetAxisRaw("Horizontal");
+        var z = Input.GetAxisRaw("Vertical");
+
+        direction = new Vector3(x, 0, z);
+        direction = Vector3.Normalize(direction);
     }
 
     private void Move()
     {
         if (grounded)
         {
-            var speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
-            var x = Input.GetAxis("Horizontal");
-            var z = Input.GetAxis("Vertical");
-
-            var targetVelocity = new Vector3(x, 0, z);
-
-            targetVelocity = Vector3.Normalize(targetVelocity);
-            targetVelocity = transform.TransformDirection(targetVelocity);
+            var targetVelocity = transform.TransformDirection(direction);
             targetVelocity *= speed;
 
             var velocity = body.velocity;
@@ -54,13 +57,12 @@ public class PlayerController : MonoBehaviour
             delta.z = Mathf.Clamp(delta.z, -maxVelocity, maxVelocity);
             delta.y = 0;
 
-            body.AddForce(delta, ForceMode.VelocityChange);
+            body.AddForce(delta, ForceMode.Impulse);
         }
 
         var gravityForce = new Vector3(0, -gravity * body.mass, 0);
 
         body.AddForce(gravityForce);
-        
     }
 
     private void Jump()
