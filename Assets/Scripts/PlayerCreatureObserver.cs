@@ -21,6 +21,11 @@ public class PlayerCreatureObserver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CreatureAttitudeManager == null)
+        {
+            return;
+        }
+
         this.UpsetValueSlider.value = this.CreatureAttitudeManager.CurrentUpsetValue;
         
         if(this.CreatureAttitudeManager.CurrentUpsetValue <= 0)
