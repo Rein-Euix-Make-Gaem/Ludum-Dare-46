@@ -1,15 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Interactable : MonoBehaviour
+    public struct InteractionEvent
     {
-        [SerializeField] public bool enabled = false;
-        [SerializeField] public string description = string.Empty;
+        public float timestamp;
+        public PlayerController player;
+        public RaycastHit hit;
+    }
+
+    public abstract class Interactable : MonoBehaviour
+    {
+        public bool canInteract = true;
+        public float cooldown = 1f;
+
+        private float nextInteraction;
+
+        public abstract string description { get; }
+
+        protected virtual void OnInteract(ref InteractionEvent ev)
+        {
+            Debug.Log("undefined interaction");
+        }
+
+        public virtual bool CanInteract(PlayerController player)
+        {
+            return Time.time >= nextInteraction;
+        }
+
+        public void Interact(ref InteractionEvent ev)
+        {
+            OnInteract(ref ev);
+            nextInteraction = Time.time + cooldown;
+        }
     }
 }
