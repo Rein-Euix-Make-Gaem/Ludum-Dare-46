@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -11,9 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float maxVelocity = 6f;
     [SerializeField] public float groundDistance = 1.1f;
 
+    public TMPro.TextMeshProUGUI interactionText;
+
     private bool grounded;
     private Rigidbody body;
-    private Vector3 velocity;
 
     private void Start()
     {
@@ -72,7 +75,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             var jumpSpeed = CalculateJumpSpeed();
-            var jumpVelocity = new Vector3(velocity.x, jumpSpeed, velocity.z);
+            var jumpVelocity = new Vector3(body.velocity.x, jumpSpeed, body.velocity.z);
 
             body.velocity = jumpVelocity;
         }
