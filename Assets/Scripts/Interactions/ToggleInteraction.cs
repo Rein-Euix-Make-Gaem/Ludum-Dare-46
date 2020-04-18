@@ -15,8 +15,8 @@ namespace Assets.Scripts.Interactions
         public bool toggled = false;
 
         public override string description => toggled
-            ? $"activate {objectName ?? string.Empty}"
-            : $"deactivate {objectName ?? string.Empty}";
+            ? $"deactivate {objectName ?? string.Empty}"
+            : $"activate {objectName ?? string.Empty}";
 
         protected override void OnInteract(ref InteractionEvent ev)
         {

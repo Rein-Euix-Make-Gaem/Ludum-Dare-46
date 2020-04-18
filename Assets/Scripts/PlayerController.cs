@@ -37,12 +37,13 @@ public class PlayerController : MonoBehaviour
     {
         if (grounded)
         {
-            var speed = Input.GetKey(KeyCode.LeftShift) ? walkSpeed : runSpeed;
+            var speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
             var x = Input.GetAxis("Horizontal");
             var z = Input.GetAxis("Vertical");
 
             var targetVelocity = new Vector3(x, 0, z);
 
+            targetVelocity = Vector3.Normalize(targetVelocity);
             targetVelocity = transform.TransformDirection(targetVelocity);
             targetVelocity *= speed;
 
