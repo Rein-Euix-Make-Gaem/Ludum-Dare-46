@@ -2,7 +2,10 @@
 
 public class CreatureAttitudeManager : MonoBehaviour
 {
+    public GameObject CreatureObject;
     public Material CreatureMaterial;
+    public ParticleSystem CreatureExplosion;
+
     public float CurrentUpsetValue;
 
     public float BaseCalmingRate;
@@ -10,8 +13,6 @@ public class CreatureAttitudeManager : MonoBehaviour
     public float FastCalmingModifier;
     public float FastFreakingModifier;
 
-    [SerializeField]
-    private bool IsFreakingOut;
     [SerializeField]
     private bool HasDistractions;
     [SerializeField]
@@ -21,7 +22,6 @@ public class CreatureAttitudeManager : MonoBehaviour
     void Start()
     {
         this.CurrentUpsetValue = 0;
-        this.IsFreakingOut = false;
         this.HasDistractions = true;
         this.IsPlayerPresent = false;
     }
@@ -29,12 +29,26 @@ public class CreatureAttitudeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(this.CurrentUpsetValue >= 100 
+            && !GameManager.Instance.NeverLose
+            && GameManager.Instance.IsFirstPersonControllerEnabled)
+        {
+            GameManager.Instance.IsFirstPersonControllerEnabled = false;
+            this.StartLose();
+        }
     }
 
     public void SetDistractionsEnabled(bool isEnabled)
     {
         this.HasDistractions = isEnabled;
+    }
+
+    private void StartLose()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().BigShake();
+        this.CreatureExplosion.Play();
+        this.CreatureObject.SetActive(false);
+        GameManager.Instance.LoseGame();
     }
 
     // Updates 50 times per second
