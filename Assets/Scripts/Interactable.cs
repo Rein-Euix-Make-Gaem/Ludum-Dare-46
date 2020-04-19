@@ -27,6 +27,23 @@ namespace Assets.Scripts
             Debug.Log("undefined interaction");
         }
 
+        public void SetSelecting(bool value)
+        {
+            Debug.Log($"select interactable {value}");
+
+            foreach (var child in GetComponentsInChildren<Transform>(true))
+            {
+                if (value)
+                {
+                    child.gameObject.layer |= 8;
+                }
+                else
+                {
+                    child.gameObject.layer &= ~8;
+                }
+            }
+        }
+
         public virtual bool CanInteract(PlayerController player)
         {
             return canInteract && Time.time >= nextInteraction;
