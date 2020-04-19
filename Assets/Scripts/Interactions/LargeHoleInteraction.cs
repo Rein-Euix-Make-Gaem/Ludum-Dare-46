@@ -19,6 +19,7 @@ public class LargeHoleInteraction : ToggleInteraction
         {
             this.playerController.DropLargePatch();
             this.airParticles.Stop();
+            GameManager.Instance.RemoveLargeOxygenLoss();
             this.target.SetActive(false);
         }
     }
