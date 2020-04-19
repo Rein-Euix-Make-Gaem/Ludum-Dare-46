@@ -618,6 +618,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1394134384065034875, guid: 84a7dbaf14475c54095b7d8d1a53026d,
+        type: 3}
+      propertyPath: ToggleEvent
+      value: event:/LightBlip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394134384065034875, guid: 84a7dbaf14475c54095b7d8d1a53026d,
+        type: 3}
+      propertyPath: SolveEvent
+      value: event:/LightPuzzleWin
+      objectReference: {fileID: 0}
     - target: {fileID: 7180337941254524035, guid: 84a7dbaf14475c54095b7d8d1a53026d,
         type: 3}
       propertyPath: m_Layer

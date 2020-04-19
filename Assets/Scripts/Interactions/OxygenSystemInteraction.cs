@@ -32,5 +32,16 @@ public class OxygenSystemInteraction : ToggleInteraction
 
         // If oxygen is enabled, disable distractions.
         GameObject.FindGameObjectWithTag("CreatureRoom").GetComponent<CreatureAttitudeManager>().SetDistractionsEnabled(!this.oxygenEnabled);
+    
+        if (this.oxygenEnabled){
+            FMODUnity.RuntimeManager.PlayOneShot("event:/OxygenActivated");
+        }
+        else {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/OxygenDeactivated");
+        }
+    
+    
+    
+    
     }
 }

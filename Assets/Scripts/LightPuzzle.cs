@@ -9,12 +9,21 @@ public class LightPuzzle : MonoBehaviour
 
     private bool[] state;
 
+    public string ToggleEvent = "";
+    FMOD.Studio.EventInstance toggleSound;
+
+    public string SolveEvent = "";
+    FMOD.Studio.EventInstance solveSound;
+
+
     public void Spawn()
     {
         successLight.Toggle(false);
 
         Generate(state);
         Synchronize();
+        toggleSound = FMODUnity.RuntimeManager.CreateInstance(ToggleEvent);
+        solveSound = FMODUnity.RuntimeManager.CreateInstance(SolveEvent);
     }
 
     private void Start()
@@ -53,6 +62,8 @@ public class LightPuzzle : MonoBehaviour
             if (!state[i]) return false;
         }
 
+        solveSound.start();
+
         return true;
     }
 
@@ -90,6 +101,9 @@ public class LightPuzzle : MonoBehaviour
         
         if (index - 1 >= 0) state[index - 1] = !state[index - 1];
         if (index + 1 < state.Length) state[index + 1] = !state[index + 1];
+
+        toggleSound.start();
+
     }
 
     private void Reset()
