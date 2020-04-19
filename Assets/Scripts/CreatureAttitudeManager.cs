@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CreatureAttitudeManager : MonoBehaviour
 {
@@ -51,6 +52,15 @@ public class CreatureAttitudeManager : MonoBehaviour
         this.CreatureExplosion.Play();
         this.CreatureObject.SetActive(false);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Death");
+
+        StartCoroutine(WaitForDeath());
+    }
+
+    IEnumerator WaitForDeath()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(2);
+
         GameManager.Instance.LoseGame();
     }
 
