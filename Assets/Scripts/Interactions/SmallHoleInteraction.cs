@@ -16,6 +16,7 @@ public class SmallHoleInteraction : ToggleInteraction
         if (this.target != null)
         {
             this.airParticles.Stop();
+            GameManager.Instance.RemoveSmallOxygenLoss();
             this.target.SetActive(false);
         }
     }

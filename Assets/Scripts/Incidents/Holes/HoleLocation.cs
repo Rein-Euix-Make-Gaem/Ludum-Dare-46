@@ -66,6 +66,8 @@ public class HoleLocation : MonoBehaviour
 
         this.SmallHoleObject.gameObject.SetActive(true);
         this.SmallHoleObject.Initialize();
+
+        GameManager.Instance.AddSmallOxygenLoss();
     }
 
     public void CreateLargeHole()
@@ -80,5 +82,7 @@ public class HoleLocation : MonoBehaviour
 
         this.LargeHoleObject.gameObject.SetActive(true);
         this.LargeHoleObject.Initialize();
+
+        GameManager.Instance.AddLargeOxygenLoss();
     }
 }
