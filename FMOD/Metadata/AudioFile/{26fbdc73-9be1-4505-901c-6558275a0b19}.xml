@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{26fbdc73-9be1-4505-901c-6558275a0b19}">
+		<property name="assetPath">
+			<value>SFX/Blip.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.15340136054421769</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6a166b23-b5ed-4f1f-9ffd-2c7fba508675}</destination>
+		</relationship>
+	</object>
+</objects>

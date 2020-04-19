@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
+    public CreatureAttitudeManager creatureAttitudeManager;
+
     public Scene TitleScene;
     public Scene MainGame;
     public Scene LoseScene;
@@ -13,9 +15,13 @@ public class GameManager : SingletonBehaviour<GameManager>
     public bool SkipTitle;
     public bool NeverLose;
 
+    public bool IsIncidentSpawningEnabled;
     public bool IsFirstPersonControllerEnabled;
 
     public bool IsShieldActive;
+    public bool IsPowerActive;
+    public bool IsAsteroidSpawningEnabled;
+    public bool IsAsteroidFieldActive;
 
     public float CurrentOxygen;
     public float BaseOxygenProductionRate;
@@ -31,6 +37,10 @@ public class GameManager : SingletonBehaviour<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        IsIncidentSpawningEnabled = true;
+        IsAsteroidSpawningEnabled = true;
+        IsPowerActive = true;
+
         this.isProducingOxygen = false;
         this.CurrentOxygen = 100;
 
@@ -69,6 +79,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void SetOxygenProduction(bool enableProduction)
     {
         this.isProducingOxygen = enableProduction;
+
+        UpdateDistractions();
     }
 
     public void AddSmallOxygenLoss()
@@ -93,7 +105,32 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void SetShieldActive(bool shieldActive)
     {
-        this.IsShieldActive = shieldActive;
+        Debug.Log($"shields {(shieldActive ? "active" : "disabled")}");
+
+        IsShieldActive = shieldActive;
+        UpdateDistractions();
+    }
+
+    public void SetPowerActive(bool value)
+    {
+        Debug.Log($"ship power {(value ? "enabled": "disabled" )}");
+
+        IsPowerActive = value;
+        UpdateDistractions();
+    }
+
+    public void SetAsteroidFieldActive(bool value)
+    {
+        IsAsteroidFieldActive = value;
+    }
+
+    private void UpdateDistractions()
+    {
+        // allow distractions if power is active and there are no
+        // power-consuming activities
+
+        creatureAttitudeManager.SetDistractionsEnabled(
+            IsPowerActive && !IsShieldActive && !isProducingOxygen);
     }
 
     private void FixedUpdate()

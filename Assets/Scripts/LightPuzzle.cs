@@ -9,25 +9,43 @@ public class LightPuzzle : MonoBehaviour
 
     private bool[] state;
 
-    private void Start()
+    public void Spawn()
     {
-        state = new bool[items.Length];
+        successLight.Toggle(false);
+
         Generate(state);
         Synchronize();
     }
 
-    private void Synchronize()
+    private void Start()
     {
-        for (var i = 0; i < items.Length; i++)
+        state = new bool[items.Length];
+
+        for (var i = 0; i < state.Length; i++)
         {
-            items[i].Toggle(state[i]);
+            state[i] = true;
         }
+
+        Synchronize();
     }
 
-    private void Update()
+    private bool Synchronize()
     {
-        successLight.Toggle(IsWon(state));    
+        var won = IsWon(state);
+        var interactable = !won;
+
+        successLight.Toggle(won);
+
+        for (var i = 0; i < items.Length; i++)
+        {
+            items[i].puzzleLever.enabled = interactable;
+            items[i].puzzleLever.canInteract = interactable;
+            items[i].Toggle(state[i]);
+        }
+
+        return won;
     }
+
 
     private bool IsWon(bool[] state)
     {
@@ -75,18 +93,22 @@ public class LightPuzzle : MonoBehaviour
         if (index + 1 < state.Length) state[index + 1] = !state[index + 1];
     }
 
+    private void Reset()
+    {
+        for (var i = 0; i < state.Length; i++)
+        {
+            state[i] = false;
+        }
+    }
+
     private void Generate(bool[] state)
     {
         var count = 0;
 
+        Reset();
+
         while (!Validate(state))
         {
-            // reset generated board
-            for (var i = 0; i < state.Length; i++)
-            {
-                state[i] = false;
-            }
-
             // toggle random bits
             for (var i = 0; i < state.Length; i++)
             {
@@ -103,7 +125,12 @@ public class LightPuzzle : MonoBehaviour
     public void Interacted(LightPuzzleInteraction interaction)
     {
         var index = Array.FindIndex(items, x => x == interaction);
+        
         Toggle(state, index);
-        Synchronize();
+
+        if (Synchronize())
+        {
+            GameManager.Instance.SetPowerActive(true);
+        }
     }
 }

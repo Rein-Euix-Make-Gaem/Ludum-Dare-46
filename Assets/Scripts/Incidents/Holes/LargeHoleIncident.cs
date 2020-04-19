@@ -7,7 +7,7 @@ public class LargeHoleIncident : Incident
 {
     public List<HoleLocation> HoleLocations;
 
-    public override void InitiateIncident()
+    public override void Spawn()
     {
         List<HoleLocation> inactiveLocations = new List<HoleLocation>();
         foreach(HoleLocation loc in this.HoleLocations)

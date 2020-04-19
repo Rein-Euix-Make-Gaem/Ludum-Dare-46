@@ -139,6 +139,39 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &316939495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9160849304193241692, guid: 4bf0c8b3f9726a846a4517beb41104a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 966041226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &316939502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316939495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
+--- !u!114 &316939504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316939495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb1ced5f86cb4d68a267c1a9d486fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSound: event:/Step
+  walkingspeed: 0.5
 --- !u!198 &342065985 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6328510538082602650, guid: da8a7b5636062f243ae0eb5a7d15fe74,
@@ -157,6 +190,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ca605a9e7729140a78e7e267f0e710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &770219130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 942532111212485802, guid: 0cb4c6c1d4941974fafdb4521de5f6ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 942033902873926723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &770219131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770219130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 45
 --- !u!1 &795305332
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,8 +258,11 @@ MonoBehaviour:
     m_Handle: 0
   SkipTitle: 1
   NeverLose: 0
+  IsIncidentSpawningEnabled: 0
   IsFirstPersonControllerEnabled: 1
   IsShieldActive: 0
+  IsAsteroidSpawningEnabled: 0
+  IsAsteroidFieldActive: 0
   CurrentOxygen: 0
   BaseOxygenProductionRate: 0.1
   BaseSmallOxygenLossRate: 0.01
@@ -263,8 +328,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1365277544}
   - component: {fileID: 1365277543}
+  - component: {fileID: 1365277547}
   - component: {fileID: 1365277542}
   - component: {fileID: 1365277545}
+  - component: {fileID: 1365277546}
+  - component: {fileID: 1365277549}
   m_Layer: 0
   m_Name: IncidentManager
   m_TagString: Untagged
@@ -303,7 +371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717bfd5021d3ed34185967ce7f884012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Incidents: []
+  incidentSpawner: {fileID: 1365277547}
+  asteroidSpawner: {fileID: 1365277549}
 --- !u!4 &1365277544
 Transform:
   m_ObjectHideFlags: 0
@@ -337,6 +406,55 @@ MonoBehaviour:
   - {fileID: 3237652314957460489}
   - {fileID: 3237652314957460488}
   - {fileID: 3237652314957460487}
+--- !u!114 &1365277546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365277541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5ffe477d67e3f45a853a4c01916455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidSpawner: {fileID: 1365277549}
+  duration: 60
+--- !u!114 &1365277547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365277541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4dae3c208dd11f48a90f76784647f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1365277546}
+  minSpawnInterval: 30
+  spawnChance: 0.1
+  spawnInterval: 5
+--- !u!114 &1365277549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365277541}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4dae3c208dd11f48a90f76784647f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1365277542}
+  - {fileID: 1365277545}
+  minSpawnInterval: 30
+  spawnChance: 0.01
+  spawnInterval: 5
 --- !u!114 &1526378438 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3237652313992076224, guid: da8a7b5636062f243ae0eb5a7d15fe74,

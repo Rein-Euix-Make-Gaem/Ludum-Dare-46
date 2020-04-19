@@ -11,6 +11,15 @@ public class PlayerOxygenObserver : MonoBehaviour
     public GameObject SuffocationMask;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        if (GameManager.Instance == null)
+        {
+            enabled = false;
+        }
+    }
+
     void Update()
     {
         this.OxygenProgressor.SetValue(GameManager.Instance.CurrentOxygen);
