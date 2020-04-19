@@ -1,9 +1,6 @@
 ﻿using Doozy.Engine.Progress;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerOxygenObserver : MonoBehaviour
 {
@@ -41,5 +38,16 @@ public class PlayerOxygenObserver : MonoBehaviour
         Animator anim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
         anim.enabled = true;
         anim.SetTrigger("suffocationDeath");
+
+        //Start the coroutine we define below named ExampleCoroutine.
+        StartCoroutine(WaitForDeath());
+    }
+
+    IEnumerator WaitForDeath()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(1.5f);
+
+        GameManager.Instance.LoseGame();
     }
 }

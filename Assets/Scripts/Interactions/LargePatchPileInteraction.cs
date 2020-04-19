@@ -1,22 +1,30 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Interactions;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LargePatchPileInteraction : ToggleInteraction
+public class LargePatchPileInteraction : Interactable
 {
     public GameObject target;
+
+    private PlayerController player =>
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+    public override string description => player.IsCarryingPatch
+        ? "drop patch" : "pickup patch";
 
     protected override void OnInteract(ref InteractionEvent ev)
     {
         base.OnInteract(ref ev);
 
-        if (this.target != null)
-        {
-            if (!GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().IsCarryingPatch)
+        if (target != null)
+        { 
+            if (!player.IsCarryingPatch)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().PickupLargePatch();
+                player.PickupLargePatch();
+            }
+            else
+            {
+                player.DropLargePatch();
             }
         }
     }

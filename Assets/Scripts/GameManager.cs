@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Doozy.Engine.UI;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,10 +8,10 @@ public class GameManager : SingletonBehaviour<GameManager>
 {
     public CreatureAttitudeManager creatureAttitudeManager;
 
-    public Scene TitleScene;
-    public Scene MainGame;
-    public Scene LoseScene;
-    public Scene WinScene;
+    public string TitleScene;
+    public string MainGame;
+    public UICanvas LoseScreen;
+    public UICanvas WinScreen;
 
     public bool SkipTitle;
     public bool NeverLose;
@@ -31,97 +32,144 @@ public class GameManager : SingletonBehaviour<GameManager>
     public float SuffocationTime;
     public float ElapsedSuffocationTime;
 
-    private float TotalOxygenReductionRate;
+    private float maxOxygen = 100f;
+    private float totalOxygenReductionRate;
     private bool isProducingOxygen;
+    private bool alreadySuffocated;
 
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.sceneLoaded += this.OnSceneLoaded;
+
         IsIncidentSpawningEnabled = true;
         IsAsteroidSpawningEnabled = true;
         IsPowerActive = true;
 
         this.isProducingOxygen = false;
-        this.CurrentOxygen = 100;
+        this.CurrentOxygen = this.maxOxygen;
+        this.alreadySuffocated = false;
 
-        if (this.SkipTitle)
+        if (this.SkipTitle && SceneManager.GetActiveScene().name != this.MainGame)
         {
-            this.IsFirstPersonControllerEnabled = true;
-            SceneManager.LoadScene(this.MainGame.name);
+            this.StartGame();
         }
-        else
+        else if(SceneManager.GetActiveScene().name != this.TitleScene)
         {
-            SceneManager.LoadScene(this.TitleScene.name);
+            this.ReturnToTitle();
         }
     }
 
     public void StartGame()
     {
+        this.CurrentOxygen = this.maxOxygen;
+        this.alreadySuffocated = false;
         this.IsFirstPersonControllerEnabled = true;
-        SceneManager.LoadScene(this.MainGame.name);
+        this.LoseScreen.gameObject.SetActive(false);
+        SceneManager.LoadScene(this.MainGame);
     }
 
     public void LoseGame()
     {
-        SceneManager.MergeScenes(this.LoseScene, this.MainGame);
+        this.LoseScreen.gameObject.SetActive(true);
     }
 
     public void WinGame()
     {
-        SceneManager.MergeScenes(this.WinScene, this.MainGame);
+        // this.WinScreen.enabled = true;
     }
 
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene(this.TitleScene.name);
+        this.LoseScreen.gameObject.SetActive(false);
+        // this.WinScreen.gameObject.SetActive(false);
+        this.IsFirstPersonControllerEnabled = false;
+        SceneManager.LoadScene(this.TitleScene);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void OnDisable()
+    {
+        SceneManager.sceneLoaded -= this.OnSceneLoaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        if(scene.name == this.MainGame)
+        {
+            this.ResetGameState();
+            this.creatureAttitudeManager = GameObject.FindGameObjectWithTag("CreatureRoom").GetComponent<CreatureAttitudeManager>();
+        }
+        else if(scene.name == this.TitleScene)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    private void ResetGameState()
+    {
+        this.CurrentOxygen = this.maxOxygen;
+        this.totalOxygenReductionRate = 0;
+        this.alreadySuffocated = false;
+        this.IsFirstPersonControllerEnabled = true;
+        this.isProducingOxygen = false;
+        this.IsShieldActive = false;
+        this.IsPowerActive = true;
+        this.IsAsteroidFieldActive = false;
+}
 
     public void SetOxygenProduction(bool enableProduction)
     {
         this.isProducingOxygen = enableProduction;
 
-        UpdateDistractions();
+        this.UpdateDistractions();
     }
 
     public void AddSmallOxygenLoss()
     {
-        this.TotalOxygenReductionRate += this.BaseSmallOxygenLossRate;
+        this.totalOxygenReductionRate += this.BaseSmallOxygenLossRate;
     }
 
     public void AddLargeOxygenLoss()
     {
-        this.TotalOxygenReductionRate += this.BaseLargeOxygenLossRate;
+        this.totalOxygenReductionRate += this.BaseLargeOxygenLossRate;
     }
 
     public void RemoveSmallOxygenLoss()
     {
-        this.TotalOxygenReductionRate -= this.BaseSmallOxygenLossRate;
+        this.totalOxygenReductionRate -= this.BaseSmallOxygenLossRate;
     }
 
     public void RemoveLargeOxygenLoss()
     {
-        this.TotalOxygenReductionRate -= this.BaseLargeOxygenLossRate;
+        this.totalOxygenReductionRate -= this.BaseLargeOxygenLossRate;
     }
 
     public void SetShieldActive(bool shieldActive)
     {
         Debug.Log($"shields {(shieldActive ? "active" : "disabled")}");
 
-        IsShieldActive = shieldActive;
-        UpdateDistractions();
+        this.IsShieldActive = shieldActive;
+        this.UpdateDistractions();
     }
 
     public void SetPowerActive(bool value)
     {
         Debug.Log($"ship power {(value ? "enabled": "disabled" )}");
 
-        IsPowerActive = value;
-        UpdateDistractions();
+        this.IsPowerActive = value;
+        this.UpdateDistractions();
     }
 
     public void SetAsteroidFieldActive(bool value)
     {
-        IsAsteroidFieldActive = value;
+        this.IsAsteroidFieldActive = value;
     }
 
     private void UpdateDistractions()
@@ -129,7 +177,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         // allow distractions if power is active and there are no
         // power-consuming activities
 
-        creatureAttitudeManager.SetDistractionsEnabled(
+        this.creatureAttitudeManager.SetDistractionsEnabled(
             IsPowerActive && !IsShieldActive && !isProducingOxygen);
     }
 
@@ -140,7 +188,7 @@ public class GameManager : SingletonBehaviour<GameManager>
             this.CurrentOxygen += this.BaseOxygenProductionRate;
         }
 
-        this.CurrentOxygen -= this.TotalOxygenReductionRate;
+        this.CurrentOxygen -= this.totalOxygenReductionRate;
 
         this.CurrentOxygen = (this.CurrentOxygen < 0)
             ? 0
@@ -152,10 +200,11 @@ public class GameManager : SingletonBehaviour<GameManager>
         {
             this.ElapsedSuffocationTime += Time.deltaTime;
         }
-        else if(this.CurrentOxygen <= 0 && this.ElapsedSuffocationTime >= this.SuffocationTime && !this.NeverLose)
+        else if(this.CurrentOxygen <= 0 && this.ElapsedSuffocationTime >= this.SuffocationTime && !this.NeverLose && !this.alreadySuffocated)
         {
             this.IsFirstPersonControllerEnabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerOxygenObserver>().SuffocateDeath();
+            this.alreadySuffocated = true;
         }
         else if(this.CurrentOxygen > 0 && this.ElapsedSuffocationTime > 0)
         {

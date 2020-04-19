@@ -456,11 +456,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1024, y: 768}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 7609082623906633962}
   - component: {fileID: 3704358604864671042}
   m_Layer: 0
-  m_Name: Canvas - Tablet Display
+  m_Name: Canvas - TabletDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,9 +843,9 @@ MonoBehaviour:
   StartRotation: {x: 0, y: 0, z: 0}
   StartScale: {x: 1, y: 1, z: 1}
   StartAlpha: 1
-  CanvasName: Tablet Display
-  CustomCanvasName: 1
-  DontDestroyCanvasOnLoad: 1
+  CanvasName: TabletDisplay
+  CustomCanvasName: 0
+  DontDestroyCanvasOnLoad: 0
 --- !u!1 &8100551604507801630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,7 +2843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9e0c0fb50e4aeeb8187ec2c88d2c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextMeshPro: {fileID: 8100551605803567455}
   TargetVariable: 3
   WholeNumbers: 1
   UseMultiplier: 1

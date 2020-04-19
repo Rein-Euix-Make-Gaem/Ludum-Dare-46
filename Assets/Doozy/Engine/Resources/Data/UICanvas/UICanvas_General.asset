@@ -16,3 +16,8 @@ MonoBehaviour:
   DatabaseType: 1
   Names:
   - MasterCanvas
+  - TabletDisplay
+  - LoseScreen
+  - WinScreen
+  - ShieldCanvas
+  - OxygenCanvas
