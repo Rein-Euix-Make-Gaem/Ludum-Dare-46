@@ -1,19 +1,22 @@
 ﻿using Assets.Scripts.Interactions;
 using System;
-using UnityEngine;
 
-public class LightPuzzle : MonoBehaviour
+public class LightPuzzle : Incident
 {
     public LightPuzzleInteraction[] items;
     public LightInteraction successLight;
 
     private bool[] state;
 
+    public override void InitiateIncident()
+    {
+        Generate(state);
+        Synchronize();
+    }
+
     private void Start()
     {
         state = new bool[items.Length];
-        Generate(state);
-        Synchronize();
     }
 
     private void Synchronize()
@@ -75,18 +78,22 @@ public class LightPuzzle : MonoBehaviour
         if (index + 1 < state.Length) state[index + 1] = !state[index + 1];
     }
 
+    private void Reset()
+    {
+        for (var i = 0; i < state.Length; i++)
+        {
+            state[i] = false;
+        }
+    }
+
     private void Generate(bool[] state)
     {
         var count = 0;
 
+        Reset();
+
         while (!Validate(state))
         {
-            // reset generated board
-            for (var i = 0; i < state.Length; i++)
-            {
-                state[i] = false;
-            }
-
             // toggle random bits
             for (var i = 0; i < state.Length; i++)
             {
