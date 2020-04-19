@@ -230,6 +230,7 @@ MonoBehaviour:
   jumpHeight: 1
   maxVelocity: 10
   groundDistance: 1.05
+  JumpEvent: 
   IsCarryingPatch: 0
   CarriedLargePatch: {fileID: 3407377844212534890}
 --- !u!54 &1102026363743079238
