@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float maxVelocity = 6f;
     public float groundDistance = 0.5f;
 
+    public bool IsCarryingPatch;
+    public GameObject CarriedLargePatch;
+
     private float speed;
     private Vector3 direction;
     private bool grounded;
@@ -22,6 +25,9 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody>();
         body.freezeRotation = true;
         body.useGravity = false;
+
+        this.IsCarryingPatch = false;
+        this.CarriedLargePatch.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -92,5 +98,17 @@ public class PlayerController : MonoBehaviour
 
         grounded = Physics.SphereCast(
             new Ray(transform.position, Vector3.down), 0.5f, groundDistance);
+    }
+
+    public void PickupLargePatch()
+    {
+        this.IsCarryingPatch = true;
+        this.CarriedLargePatch.SetActive(true);
+    }
+
+    public void DropLargePatch()
+    {
+        this.IsCarryingPatch = false;
+        this.CarriedLargePatch.SetActive(false);
     }
 }
