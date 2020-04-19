@@ -16,6 +16,9 @@ public class OxygenSystemInteraction : ToggleInteraction
     public string activatedEvent = "";
     FMOD.Studio.EventInstance activatedSound;
 
+    public string deActivationEvent = "";
+    FMOD.Studio.EventInstance deActivationSound;
+
     private string inactive = "INACTIVE";
     private string active = "ACTIVE";
 
@@ -23,6 +26,7 @@ public class OxygenSystemInteraction : ToggleInteraction
     {
         this.ActiveStatusText.text = this.inactive;
         activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);
+        deActivationSound = FMODUnity.RuntimeManager.CreateInstance(deActivationEvent);
     }
 
     protected override void OnInteract(ref InteractionEvent ev)

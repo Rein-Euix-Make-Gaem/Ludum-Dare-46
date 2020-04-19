@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -477,6 +477,29 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8100551605604288404}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1795433730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795433729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &1795433737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +684,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Creature Room
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6817478728857749115, guid: 0cb4c6c1d4941974fafdb4521de5f6ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cb4c6c1d4941974fafdb4521de5f6ef, type: 3}
 --- !u!1001 &1922861122205868626
 PrefabInstance:
@@ -1388,6 +1412,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: activatedEvent
+      value: event:/OxygenActivated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: deActivationEvent
+      value: event:/OxygenDeactivated
+      objectReference: {fileID: 0}
     - target: {fileID: 7203632692296885346, guid: 1f11c2640c4889d4c90bda7abc48aadc,
         type: 3}
       propertyPath: m_Name
@@ -1491,11 +1530,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1102026363743079233, guid: 0a9742c9186d2cc43b2591fb12386032,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1102026363743079233, guid: 0a9742c9186d2cc43b2591fb12386032,
         type: 3}
