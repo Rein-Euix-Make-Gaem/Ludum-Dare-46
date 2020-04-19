@@ -23,10 +23,15 @@ public class GameManager : SingletonBehaviour<GameManager>
     public bool IsAsteroidSpawningEnabled;
     public bool IsAsteroidFieldActive;
 
+    public Color AlarmColor = Color.white;
+
     public float CurrentOxygen;
     public float BaseOxygenProductionRate;
     public float BaseSmallOxygenLossRate;
     public float BaseLargeOxygenLossRate;
+
+    public int MajorHoles;
+    public int MinorHoles;
 
     public float SuffocationTime;
     public float ElapsedSuffocationTime;
@@ -35,6 +40,10 @@ public class GameManager : SingletonBehaviour<GameManager>
     private bool isProducingOxygen;
 
     // Start is called before the first frame update
+
+    public bool IsAlarmActive => 
+        IsAsteroidFieldActive || CurrentOxygen <= 25;
+
     void Start()
     {
         IsIncidentSpawningEnabled = true;
@@ -86,21 +95,25 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void AddSmallOxygenLoss()
     {
         this.TotalOxygenReductionRate += this.BaseSmallOxygenLossRate;
+        this.MinorHoles++;
     }
 
     public void AddLargeOxygenLoss()
     {
         this.TotalOxygenReductionRate += this.BaseLargeOxygenLossRate;
+        this.MajorHoles++;
     }
 
     public void RemoveSmallOxygenLoss()
     {
         this.TotalOxygenReductionRate -= this.BaseSmallOxygenLossRate;
+        this.MinorHoles--;
     }
 
     public void RemoveLargeOxygenLoss()
     {
         this.TotalOxygenReductionRate -= this.BaseLargeOxygenLossRate;
+        this.MajorHoles--;
     }
 
     public void SetShieldActive(bool shieldActive)

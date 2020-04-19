@@ -9,7 +9,6 @@ public class TabletWarningManager : MonoBehaviour
     public GameObject SmallHoleWarningObject;
     public GameObject AsteroidFieldWarningObject;
 
-    // Start is called before the first frame update
     void Start()
     {
         this.ReactorWarningObject.SetActive(false);
@@ -18,9 +17,13 @@ public class TabletWarningManager : MonoBehaviour
         this.AsteroidFieldWarningObject.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        var gameManager = GameManager.Instance;
+
+        AsteroidFieldWarningObject.SetActive(gameManager.IsAsteroidFieldActive);
+        ReactorWarningObject.SetActive(!gameManager.IsPowerActive);
+        LargeHoleWarningObject.SetActive(gameManager.MajorHoles > 0);
+        SmallHoleWarningObject.SetActive(gameManager.MinorHoles > 0);
     }
 }

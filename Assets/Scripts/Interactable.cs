@@ -22,6 +22,13 @@ namespace Assets.Scripts
 
         public virtual string description => string.Empty;
 
+        private void Start()
+        {
+            OnStart();
+        }
+
+        protected virtual void OnStart() { }
+
         protected virtual void OnInteract(ref InteractionEvent ev)
         {
             Debug.Log("undefined interaction");
