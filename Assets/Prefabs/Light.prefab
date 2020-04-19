@@ -60,8 +60,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulb: {fileID: 7053797315996892715}
   bulbColor: {r: 1, g: 1, b: 1, a: 1}
-  intensity: 0
+  intensity: 3
   responseTime: 25
+  state: 0
 --- !u!1 &7053797315996892715
 GameObject:
   m_ObjectHideFlags: 0

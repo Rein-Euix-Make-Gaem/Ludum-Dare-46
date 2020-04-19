@@ -58,5 +58,18 @@ public class IncidentSpawner : SingletonBehaviour<IncidentSpawner>
         {
             asteroidSpawner.Spawn(2, true);
         }
+
+        if (Input.GetKeyUp(KeyCode.F10))
+        {
+            GameManager.Instance.CurrentOxygen = 5;
+        }
+
+        if (Input.GetKeyUp(KeyCode.F11))
+        {
+            GameManager.Instance.CurrentOxygen = 100;
+            GameManager.Instance.IsAsteroidFieldActive = false;
+            GameManager.Instance.IsPowerActive = true;
+            GameManager.Instance.IsShieldActive = false;
+        }
     }
 }

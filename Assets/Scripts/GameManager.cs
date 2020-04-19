@@ -1,6 +1,4 @@
 ﻿using Doozy.Engine.UI;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,20 +22,29 @@ public class GameManager : SingletonBehaviour<GameManager>
     public bool IsAsteroidSpawningEnabled;
     public bool IsAsteroidFieldActive;
 
+    public Color AlarmColor = Color.white;
+
     public float CurrentOxygen;
     public float BaseOxygenProductionRate;
     public float BaseSmallOxygenLossRate;
     public float BaseLargeOxygenLossRate;
 
+    public int MajorHoles;
+    public int MinorHoles;
+
     public float SuffocationTime;
     public float ElapsedSuffocationTime;
 
     private float maxOxygen = 100f;
-    private float totalOxygenReductionRate;
+    private float TotalOxygenReductionRate;
     private bool isProducingOxygen;
     private bool alreadySuffocated;
 
     // Start is called before the first frame update
+
+    public bool IsAlarmActive => 
+        IsAsteroidFieldActive || CurrentOxygen <= 25;
+
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -115,7 +122,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     private void ResetGameState()
     {
         this.CurrentOxygen = this.maxOxygen;
-        this.totalOxygenReductionRate = 0;
+        this.TotalOxygenReductionRate = 0;
         this.alreadySuffocated = false;
         this.IsFirstPersonControllerEnabled = true;
         this.isProducingOxygen = false;
@@ -133,22 +140,26 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void AddSmallOxygenLoss()
     {
-        this.totalOxygenReductionRate += this.BaseSmallOxygenLossRate;
+        this.TotalOxygenReductionRate += this.BaseSmallOxygenLossRate;
+        this.MinorHoles++;
     }
 
     public void AddLargeOxygenLoss()
     {
-        this.totalOxygenReductionRate += this.BaseLargeOxygenLossRate;
+        this.TotalOxygenReductionRate += this.BaseLargeOxygenLossRate;
+        this.MajorHoles++;
     }
 
     public void RemoveSmallOxygenLoss()
     {
-        this.totalOxygenReductionRate -= this.BaseSmallOxygenLossRate;
+        this.TotalOxygenReductionRate -= this.BaseSmallOxygenLossRate;
+        this.MinorHoles--;
     }
 
     public void RemoveLargeOxygenLoss()
     {
-        this.totalOxygenReductionRate -= this.BaseLargeOxygenLossRate;
+        this.TotalOxygenReductionRate -= this.BaseLargeOxygenLossRate;
+        this.MajorHoles--;
     }
 
     public void SetShieldActive(bool shieldActive)
@@ -188,7 +199,7 @@ public class GameManager : SingletonBehaviour<GameManager>
             this.CurrentOxygen += this.BaseOxygenProductionRate;
         }
 
-        this.CurrentOxygen -= this.totalOxygenReductionRate;
+        this.CurrentOxygen -= this.TotalOxygenReductionRate;
 
         this.CurrentOxygen = (this.CurrentOxygen < 0)
             ? 0

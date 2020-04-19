@@ -285,6 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7123856819831064577}
+  - component: {fileID: 843407526612902001}
   m_Layer: 0
   m_Name: Debug Lighting
   m_TagString: Untagged
@@ -309,3 +310,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &843407526612902001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300089401226051610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc02710b7f336e48a430661b25b8d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulsesPerSecond: 1.75
+  color: {r: 1, g: 0, b: 0, a: 0.050980393}
