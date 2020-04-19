@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     public float maxVelocity = 6f;
     public float groundDistance = 0.5f;
 
+
+    public string JumpEvent = "";
+    FMOD.Studio.EventInstance jumpSound;
+
     public bool IsCarryingPatch;
     public GameObject CarriedLargePatch;
 
@@ -28,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
         this.IsCarryingPatch = false;
         this.CarriedLargePatch.SetActive(false);
+
+        jumpSound = FMODUnity.RuntimeManager.CreateInstance(JumpEvent);
     }
 
     private void FixedUpdate()
@@ -40,8 +46,8 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
 
-        if (GameManager.Instance.IsFirstPersonControllerEnabled)
-        {
+        //if (GameManager.Instance.IsFirstPersonControllerEnabled)
+        //{
             speed = Input.GetKey(KeyCode.LeftShift) && !this.IsCarryingPatch ? runSpeed : walkSpeed;
 
             var x = Input.GetAxisRaw("Horizontal");
@@ -49,11 +55,11 @@ public class PlayerController : MonoBehaviour
 
             direction = new Vector3(x, 0, z);
             direction = Vector3.Normalize(direction);
-        }
-        else
-        {
-            speed = 0;
-        }
+        //}
+        //else
+        //{
+        //    speed = 0;
+        //}
     }
 
     private void Move()
@@ -92,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
             body.velocity = jumpVelocity;
 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
+            jumpSound.start();
         }
     }
     
