@@ -139,35 +139,6 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &302019775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3237652313964738779, guid: da8a7b5636062f243ae0eb5a7d15fe74,
-    type: 3}
-  m_PrefabInstance: {fileID: 3237652314957460486}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &302019776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302019775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Hiss
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 6
 --- !u!1 &316939495
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,12 +503,41 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302019775}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad919fe1f4b37b24d916f979486bb6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1534306303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6328510537336129529, guid: da8a7b5636062f243ae0eb5a7d15fe74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3237652314957460486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1534306304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534306303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Hiss
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
 --- !u!1 &1551342713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1534306303}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad919fe1f4b37b24d916f979486bb6ee, type: 3}

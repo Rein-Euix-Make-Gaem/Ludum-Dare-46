@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{f8df58fc-6c0e-4139-93cb-c53e61f11f29}">
+		<property name="assetPath">
+			<value>SFX/worriedGurgles/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6a166b23-b5ed-4f1f-9ffd-2c7fba508675}</destination>
+		</relationship>
+	</object>
+</objects>
