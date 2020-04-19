@@ -22,6 +22,7 @@ namespace Assets.Scripts.Interactions
         {
             toggled = value;
             controller.angle = value ? controller.maxAngle : controller.minAngle;
+            
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Assets.Scripts.Interactions
         {
             toggled = value;
             lightController.intensity = value ? intensity : 0f;
+
         }
     }
 }
