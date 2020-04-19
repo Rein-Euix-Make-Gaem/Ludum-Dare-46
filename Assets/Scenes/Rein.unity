@@ -139,6 +139,39 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &316939495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9160849304193241692, guid: 4bf0c8b3f9726a846a4517beb41104a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 966041226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &316939502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316939495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
+--- !u!114 &316939504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316939495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb1ced5f86cb4d68a267c1a9d486fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSound: event:/Step
+  walkingspeed: 0.5
 --- !u!198 &342065985 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6328510538082602650, guid: da8a7b5636062f243ae0eb5a7d15fe74,
@@ -157,6 +190,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ca605a9e7729140a78e7e267f0e710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &770219130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 942532111212485802, guid: 0cb4c6c1d4941974fafdb4521de5f6ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 942033902873926723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &770219131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770219130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 45
 --- !u!1 &795305332
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,11 +259,11 @@ MonoBehaviour:
   SkipTitle: 1
   NeverLose: 0
   IsFirstPersonControllerEnabled: 0
+  IsShieldActive: 0
   CurrentOxygen: 0
   BaseOxygenProductionRate: 0.1
   BaseSmallOxygenLossRate: 0.01
   BaseLargeOxygenLossRate: 0.05
-  TotalOxygenReductionRate: 0
 --- !u!4 &795305334
 Transform:
   m_ObjectHideFlags: 0

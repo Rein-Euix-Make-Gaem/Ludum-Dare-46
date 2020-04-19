@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
             var jumpVelocity = new Vector3(body.velocity.x, jumpSpeed, body.velocity.z);
 
             body.velocity = jumpVelocity;
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
         }
     }
     
@@ -104,11 +106,15 @@ public class PlayerController : MonoBehaviour
     {
         this.IsCarryingPatch = true;
         this.CarriedLargePatch.SetActive(true);
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PickUp");
     }
 
     public void DropLargePatch()
     {
         this.IsCarryingPatch = false;
         this.CarriedLargePatch.SetActive(false);
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PickUp");
     }
 }
