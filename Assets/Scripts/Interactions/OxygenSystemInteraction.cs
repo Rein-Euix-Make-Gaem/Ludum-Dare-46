@@ -14,7 +14,7 @@ public class OxygenSystemInteraction : ToggleInteraction
     FMOD.Studio.EventInstance activatedSound;
 
 
-    private Awake(){
+    private void Awake(){
         activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);
     }
 
