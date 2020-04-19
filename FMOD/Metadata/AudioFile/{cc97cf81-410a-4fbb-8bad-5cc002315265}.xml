@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{cc97cf81-410a-4fbb-8bad-5cc002315265}">
+		<property name="assetPath">
+			<value>SFX/shieldsDeactivated.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6764399092970521</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6a166b23-b5ed-4f1f-9ffd-2c7fba508675}</destination>
+		</relationship>
+	</object>
+</objects>
