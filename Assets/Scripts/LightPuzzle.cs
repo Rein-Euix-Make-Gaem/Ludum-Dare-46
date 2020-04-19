@@ -8,7 +8,7 @@ public class LightPuzzle : Incident
 
     private bool[] state;
 
-    public override void InitiateIncident()
+    public override void Spawn()
     {
         Generate(state);
         Synchronize();

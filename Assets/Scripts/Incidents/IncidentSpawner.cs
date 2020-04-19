@@ -1,32 +1,60 @@
-﻿using Assets.Scripts.Interactions;
-using System.Collections;
+﻿using Assets.Scripts;
+using Assets.Scripts.Incidents;
 using System.Collections.Generic;
+using System.Configuration;
 using UnityEngine;
 
 public class IncidentSpawner : SingletonBehaviour<IncidentSpawner>
 {
-    public List<Incident> Incidents;
+    public Spawner incidentSpawner;
+    public Spawner asteroidSpawner;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnSpawn(Spawnable spawnable)
     {
-        foreach(Incident inc in this.gameObject.GetComponents<Incident>())
+#if DEBUG
+        var incident = spawnable as Incident;
+
+        if (incident != null)
         {
-            this.Incidents.Add(inc);
+            Debug.Log($"spawned <{incident.GetType()}>");
         }
+#endif
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Backspace))
-        {
-            this.SpawnIncident();
-        }
+        incidentSpawner.enabled = GameManager.Instance.IsIncidentSpawningEnabled;
+        UpdateDebug();
     }
 
-    public void SpawnIncident()
+    [System.Diagnostics.Conditional("DEBUG")]
+    private void UpdateDebug()
     {
-        this.Incidents[Random.Range(0, this.Incidents.Count)].InitiateIncident();
+        if (Input.GetKeyUp(KeyCode.F12))
+        {
+            var spawningEnabled = GameManager.Instance.IsIncidentSpawningEnabled;
+            GameManager.Instance.IsIncidentSpawningEnabled = !spawningEnabled;
+            Debug.Log($"incident spawning enabled = {!spawningEnabled}");
+        }
+
+        if (Input.GetKeyUp(KeyCode.Backspace))
+        {
+            incidentSpawner.SpawnRandom(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.F1))
+        {
+            incidentSpawner.Spawn(0, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.F2))
+        {
+            asteroidSpawner.Spawn(0, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.F3))
+        {
+            asteroidSpawner.Spawn(1, true);
+        }
     }
 }

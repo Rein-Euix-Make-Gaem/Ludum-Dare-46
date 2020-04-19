@@ -13,9 +13,12 @@ public class GameManager : SingletonBehaviour<GameManager>
     public bool SkipTitle;
     public bool NeverLose;
 
+    public bool IsIncidentSpawningEnabled;
     public bool IsFirstPersonControllerEnabled;
 
     public bool IsShieldActive;
+    public bool IsAsteroidSpawningEnabled;
+    public bool IsAsteroidFieldActive;
 
     public float CurrentOxygen;
     public float BaseOxygenProductionRate;
@@ -28,6 +31,9 @@ public class GameManager : SingletonBehaviour<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        IsIncidentSpawningEnabled = true;
+        IsAsteroidSpawningEnabled = true;
+
         this.isProducingOxygen = false;
         this.CurrentOxygen = 100;
 
@@ -91,6 +97,11 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void SetShieldActive(bool shieldActive)
     {
         this.IsShieldActive = shieldActive;
+    }
+
+    public void SetAsteroidFieldActive(bool value)
+    {
+        IsAsteroidFieldActive = value;
     }
 
     private void FixedUpdate()
