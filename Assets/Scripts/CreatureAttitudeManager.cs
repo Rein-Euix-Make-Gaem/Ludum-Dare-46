@@ -87,6 +87,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerEntersRoom"); 
             this.IsPlayerPresent = true;
         }
     }
