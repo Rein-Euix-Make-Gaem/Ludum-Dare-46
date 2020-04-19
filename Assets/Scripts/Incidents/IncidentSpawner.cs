@@ -1,7 +1,4 @@
 ﻿using Assets.Scripts;
-using Assets.Scripts.Incidents;
-using System.Collections.Generic;
-using System.Configuration;
 using UnityEngine;
 
 public class IncidentSpawner : SingletonBehaviour<IncidentSpawner>
@@ -55,6 +52,11 @@ public class IncidentSpawner : SingletonBehaviour<IncidentSpawner>
         if (Input.GetKeyUp(KeyCode.F3))
         {
             asteroidSpawner.Spawn(1, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.F4))
+        {
+            asteroidSpawner.Spawn(2, true);
         }
     }
 }

@@ -1,15 +1,18 @@
 ﻿using Assets.Scripts.Interactions;
 using System;
+using UnityEngine;
 
-public class LightPuzzle : Incident
+public class LightPuzzle : MonoBehaviour
 {
     public LightPuzzleInteraction[] items;
     public LightInteraction successLight;
 
     private bool[] state;
 
-    public override void Spawn()
+    public void Spawn()
     {
+        successLight.Toggle(false);
+
         Generate(state);
         Synchronize();
     }
@@ -17,20 +20,32 @@ public class LightPuzzle : Incident
     private void Start()
     {
         state = new bool[items.Length];
+
+        for (var i = 0; i < state.Length; i++)
+        {
+            state[i] = true;
+        }
+
+        Synchronize();
     }
 
-    private void Synchronize()
+    private bool Synchronize()
     {
+        var won = IsWon(state);
+        var interactable = !won;
+
+        successLight.Toggle(won);
+
         for (var i = 0; i < items.Length; i++)
         {
+            items[i].puzzleLever.enabled = interactable;
+            items[i].puzzleLever.canInteract = interactable;
             items[i].Toggle(state[i]);
         }
+
+        return won;
     }
 
-    private void Update()
-    {
-        successLight.Toggle(IsWon(state));    
-    }
 
     private bool IsWon(bool[] state)
     {
@@ -110,7 +125,12 @@ public class LightPuzzle : Incident
     public void Interacted(LightPuzzleInteraction interaction)
     {
         var index = Array.FindIndex(items, x => x == interaction);
+        
         Toggle(state, index);
-        Synchronize();
+
+        if (Synchronize())
+        {
+            GameManager.Instance.SetPowerActive(true);
+        }
     }
 }
