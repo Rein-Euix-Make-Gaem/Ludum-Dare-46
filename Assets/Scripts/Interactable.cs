@@ -14,13 +14,13 @@ namespace Assets.Scripts
     public abstract class Interactable : MonoBehaviour
     {
         public bool canInteract = true;
-        public float cooldown = 1f;
+        public float cooldown = 0f;
         public Interactable[] proxies;
         public float holdTime;
 
         private float nextInteraction;
 
-        public abstract string description { get; }
+        public virtual string description => string.Empty;
 
         protected virtual void OnInteract(ref InteractionEvent ev)
         {
@@ -29,7 +29,7 @@ namespace Assets.Scripts
 
         public virtual bool CanInteract(PlayerController player)
         {
-            return Time.time >= nextInteraction;
+            return canInteract && Time.time >= nextInteraction;
         }
 
         public void Interact(ref InteractionEvent ev)
