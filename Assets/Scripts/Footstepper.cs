@@ -20,11 +20,11 @@ public class Footstepper : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01 ||
             Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01 ){
-                Debug.Log("I'm moving!");
+                // Debug.Log("I'm moving!");
                 playerismoving = true;
             }
         else {
-            Debug.Log("I'm standing still!");
+            // Debug.Log("I'm standing still!");
             playerismoving = false;
         }
     }

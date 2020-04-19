@@ -258,8 +258,11 @@ MonoBehaviour:
     m_Handle: 0
   SkipTitle: 1
   NeverLose: 0
+  IsIncidentSpawningEnabled: 0
   IsFirstPersonControllerEnabled: 0
   IsShieldActive: 0
+  IsAsteroidSpawningEnabled: 0
+  IsAsteroidFieldActive: 0
   CurrentOxygen: 0
   BaseOxygenProductionRate: 0.1
   BaseSmallOxygenLossRate: 0.01
@@ -478,8 +481,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1365277544}
   - component: {fileID: 1365277543}
+  - component: {fileID: 1365277547}
   - component: {fileID: 1365277542}
   - component: {fileID: 1365277545}
+  - component: {fileID: 1365277546}
+  - component: {fileID: 1365277549}
   m_Layer: 0
   m_Name: IncidentManager
   m_TagString: Untagged
@@ -518,7 +524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717bfd5021d3ed34185967ce7f884012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Incidents: []
+  incidentSpawner: {fileID: 1365277547}
+  asteroidSpawner: {fileID: 1365277549}
 --- !u!4 &1365277544
 Transform:
   m_ObjectHideFlags: 0
@@ -552,6 +559,55 @@ MonoBehaviour:
   - {fileID: 3237652314957460489}
   - {fileID: 3237652314957460488}
   - {fileID: 3237652314957460487}
+--- !u!114 &1365277546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365277541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5ffe477d67e3f45a853a4c01916455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidSpawner: {fileID: 1365277549}
+  duration: 60
+--- !u!114 &1365277547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365277541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4dae3c208dd11f48a90f76784647f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1365277546}
+  minSpawnInterval: 30
+  spawnChance: 0.1
+  spawnInterval: 5
+--- !u!114 &1365277549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365277541}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4dae3c208dd11f48a90f76784647f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1365277542}
+  - {fileID: 1365277545}
+  minSpawnInterval: 30
+  spawnChance: 0.01
+  spawnInterval: 5
 --- !u!114 &1526378438 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3237652313992076224, guid: da8a7b5636062f243ae0eb5a7d15fe74,

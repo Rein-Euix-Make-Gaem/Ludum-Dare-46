@@ -9,6 +9,15 @@ public class PlayerOxygenObserver : MonoBehaviour
     public Slider OxygenSlider;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        if (GameManager.Instance == null)
+        {
+            enabled = false;
+        }
+    }
+
     void Update()
     {
         this.OxygenSlider.value = GameManager.Instance.CurrentOxygen;
