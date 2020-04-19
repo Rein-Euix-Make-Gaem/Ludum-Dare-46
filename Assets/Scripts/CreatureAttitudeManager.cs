@@ -5,6 +5,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     public GameObject CreatureObject;
     public Material CreatureMaterial;
     public ParticleSystem CreatureExplosion;
+    public GameObject TVScreen;
 
     public float CurrentUpsetValue;
 
@@ -41,6 +42,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     public void SetDistractionsEnabled(bool isEnabled)
     {
         this.HasDistractions = isEnabled;
+        this.TVScreen.SetActive(this.HasDistractions);
     }
 
     private void StartLose()

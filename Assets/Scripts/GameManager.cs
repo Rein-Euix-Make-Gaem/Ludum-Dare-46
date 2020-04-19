@@ -15,9 +15,22 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public bool IsFirstPersonControllerEnabled;
 
+    public bool IsShieldActive;
+
+    public float CurrentOxygen;
+    public float BaseOxygenProductionRate;
+    public float BaseSmallOxygenLossRate;
+    public float BaseLargeOxygenLossRate;
+
+    private float TotalOxygenReductionRate;
+    private bool isProducingOxygen;
+
     // Start is called before the first frame update
     void Start()
     {
+        this.isProducingOxygen = false;
+        this.CurrentOxygen = 100;
+
         if (this.SkipTitle)
         {
             this.IsFirstPersonControllerEnabled = true;
@@ -48,5 +61,51 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void ReturnToTitle()
     {
         SceneManager.LoadScene(this.TitleScene.name);
+    }
+
+    public void SetOxygenProduction(bool enableProduction)
+    {
+        this.isProducingOxygen = enableProduction;
+    }
+
+    public void AddSmallOxygenLoss()
+    {
+        this.TotalOxygenReductionRate += this.BaseSmallOxygenLossRate;
+    }
+
+    public void AddLargeOxygenLoss()
+    {
+        this.TotalOxygenReductionRate += this.BaseLargeOxygenLossRate;
+    }
+
+    public void RemoveSmallOxygenLoss()
+    {
+        this.TotalOxygenReductionRate -= this.BaseSmallOxygenLossRate;
+    }
+
+    public void RemoveLargeOxygenLoss()
+    {
+        this.TotalOxygenReductionRate -= this.BaseLargeOxygenLossRate;
+    }
+
+    public void SetShieldActive(bool shieldActive)
+    {
+        this.IsShieldActive = shieldActive;
+    }
+
+    private void FixedUpdate()
+    {
+        if (this.isProducingOxygen)
+        {
+            this.CurrentOxygen += this.BaseOxygenProductionRate;
+        }
+
+        this.CurrentOxygen -= this.TotalOxygenReductionRate;
+
+        this.CurrentOxygen = (this.CurrentOxygen < 0)
+            ? 0
+            : (this.CurrentOxygen > 100)
+                ? 100
+                : this.CurrentOxygen;
     }
 }
