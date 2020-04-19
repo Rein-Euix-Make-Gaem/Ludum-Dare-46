@@ -1,4 +1,6 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Interactions;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableDetector : MonoBehaviour
@@ -10,6 +12,7 @@ public class InteractableDetector : MonoBehaviour
     public TMPro.TextMeshProUGUI interactionText;
     public RadialProgress holdProgressBar;
 
+    private Interactable previousInteractable;
     private float accumulatedHoldTime;
 
     void Start()
@@ -25,7 +28,6 @@ public class InteractableDetector : MonoBehaviour
 
         interactionText.text = string.Empty;
 
-
         if (Physics.SphereCast(transform.position, 0.5f, transform.forward, out var hitInfo, interactionDistance, interactableMask.value))
         {
             var interactable = hitInfo.collider.gameObject.GetComponent<Interactable>();
@@ -33,6 +35,13 @@ public class InteractableDetector : MonoBehaviour
             if (interactable != null && interactable.CanInteract(player))
             {
                 interactionText.text = interactable.description;
+
+                if (previousInteractable != interactable)
+                {
+                    previousInteractable?.SetSelecting(false);
+                    previousInteractable = interactable;
+                    interactable.SetSelecting(true);
+                }
 
                 if (interactable.holdTime > 0)
                 {
@@ -64,6 +73,11 @@ public class InteractableDetector : MonoBehaviour
                     holdProgressBar.progress = 0;
                 }
             }
+        }
+        else
+        {
+            previousInteractable?.SetSelecting(false);
+            previousInteractable = null;
         }
     }
 

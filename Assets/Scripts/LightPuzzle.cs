@@ -38,7 +38,6 @@ public class LightPuzzle : MonoBehaviour
 
         for (var i = 0; i < items.Length; i++)
         {
-            items[i].puzzleLever.enabled = interactable;
             items[i].puzzleLever.canInteract = interactable;
             items[i].Toggle(state[i]);
         }
