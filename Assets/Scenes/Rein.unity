@@ -133,6 +133,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a2c54555a3d9344b00b524e0b9a6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &168208673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8605118361504136938, guid: da8a7b5636062f243ae0eb5a7d15fe74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3237652314957460486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &168208675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168208673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Hiss
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!198 &201461411 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6776950362185847243, guid: da8a7b5636062f243ae0eb5a7d15fe74,
@@ -515,7 +544,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1534306304
+--- !u!114 &1534306305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -669,6 +698,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ca605a9e7729140a78e7e267f0e710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1619748418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3834964463017883403, guid: da8a7b5636062f243ae0eb5a7d15fe74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3237652314957460486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1619748420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619748418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Hiss
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1792249393
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +793,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1795433729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102026363743079234, guid: 0a9742c9186d2cc43b2591fb12386032,
+    type: 3}
+  m_PrefabInstance: {fileID: 8100551605604288404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1795433737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795433729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb1ced5f86cb4d68a267c1a9d486fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSound: event:/Step
+  walkingspeed: 0.5
 --- !u!198 &1876035006 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3237652313234518456, guid: da8a7b5636062f243ae0eb5a7d15fe74,
@@ -1288,7 +1366,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 168208673}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad919fe1f4b37b24d916f979486bb6ee, type: 3}
@@ -1312,7 +1390,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3237652314957460486}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1619748418}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad919fe1f4b37b24d916f979486bb6ee, type: 3}
