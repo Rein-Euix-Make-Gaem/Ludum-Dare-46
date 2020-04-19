@@ -22,6 +22,9 @@ public class GameManager : SingletonBehaviour<GameManager>
     public float BaseSmallOxygenLossRate;
     public float BaseLargeOxygenLossRate;
 
+    public float SuffocationTime;
+    public float ElapsedSuffocationTime;
+
     private float TotalOxygenReductionRate;
     private bool isProducingOxygen;
 
@@ -107,5 +110,19 @@ public class GameManager : SingletonBehaviour<GameManager>
             : (this.CurrentOxygen > 100)
                 ? 100
                 : this.CurrentOxygen;
+
+        if(this.CurrentOxygen <= 0 && this.ElapsedSuffocationTime < this.SuffocationTime)
+        {
+            this.ElapsedSuffocationTime += Time.deltaTime;
+        }
+        else if(this.CurrentOxygen <= 0 && this.ElapsedSuffocationTime >= this.SuffocationTime && !this.NeverLose)
+        {
+            this.IsFirstPersonControllerEnabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerOxygenObserver>().SuffocateDeath();
+        }
+        else if(this.CurrentOxygen > 0 && this.ElapsedSuffocationTime > 0)
+        {
+            this.ElapsedSuffocationTime = 0;
+        }
     }
 }

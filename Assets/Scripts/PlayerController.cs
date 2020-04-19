@@ -40,13 +40,20 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
 
-        speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        if (GameManager.Instance.IsFirstPersonControllerEnabled)
+        {
+            speed = Input.GetKey(KeyCode.LeftShift) && !this.IsCarryingPatch ? runSpeed : walkSpeed;
 
-        var x = Input.GetAxisRaw("Horizontal");
-        var z = Input.GetAxisRaw("Vertical");
+            var x = Input.GetAxisRaw("Horizontal");
+            var z = Input.GetAxisRaw("Vertical");
 
-        direction = new Vector3(x, 0, z);
-        direction = Vector3.Normalize(direction);
+            direction = new Vector3(x, 0, z);
+            direction = Vector3.Normalize(direction);
+        }
+        else
+        {
+            speed = 0;
+        }
     }
 
     private void Move()
