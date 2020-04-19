@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
             body.velocity = jumpVelocity;
 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Button Press");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
         }
     }
     
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         this.IsCarryingPatch = true;
         this.CarriedLargePatch.SetActive(true);
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Button Press");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PickUp");
     }
 
     public void DropLargePatch()
@@ -115,6 +115,6 @@ public class PlayerController : MonoBehaviour
         this.IsCarryingPatch = false;
         this.CarriedLargePatch.SetActive(false);
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Button Press");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PickUp");
     }
 }

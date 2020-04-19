@@ -50,6 +50,7 @@ public class CreatureAttitudeManager : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().BigShake();
         this.CreatureExplosion.Play();
         this.CreatureObject.SetActive(false);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Death");
         GameManager.Instance.LoseGame();
     }
 
