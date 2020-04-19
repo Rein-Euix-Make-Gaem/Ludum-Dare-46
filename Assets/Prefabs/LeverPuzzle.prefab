@@ -33,7 +33,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232092716671526756}
   - component: {fileID: 5975732048768241852}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LeverPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,17 +182,17 @@ PrefabInstance:
     - target: {fileID: 7053797315855261215, guid: b223f88e01b4bd44db81adc1c51d2ebd,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7053797315996892715, guid: b223f88e01b4bd44db81adc1c51d2ebd,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7053797316422355128, guid: b223f88e01b4bd44db81adc1c51d2ebd,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b223f88e01b4bd44db81adc1c51d2ebd, type: 3}
@@ -230,22 +230,22 @@ PrefabInstance:
     - target: {fileID: 604613861541835253, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 604613861718658786, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 604613862648039125, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 604613862686297774, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 604613862686297775, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
@@ -320,12 +320,12 @@ PrefabInstance:
     - target: {fileID: 604613863222796539, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 604613863443894975, guid: 7b7c2b8901daf564c8dc35d6aecd6777,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b7c2b8901daf564c8dc35d6aecd6777, type: 3}
