@@ -304,3 +304,12 @@
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='AsteroidHit', format=5, channels=2, frequency=48000, lengthbytes=29760, lengthpcm=154913, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988500.
 [LOG] SoundI::release                          :  (0x7f9c881e6ed8)
 [LOG] SoundI::release                          :     AsteroidHit (0x7f9c881e7048)
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
