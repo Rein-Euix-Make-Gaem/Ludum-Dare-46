@@ -9,8 +9,17 @@ public class Spawner : MonoBehaviour
     public float spawnChance = 0.1f;
     public float spawnInterval = 90f;
 
+    public int spawnRateMultiplier;
+
     private float time;
     private float timeSinceLastSpawn;
+    private float baseSpawnChance;
+    private int actualSpawnRateMultiplier;
+
+    private void Start()
+    {
+        this.baseSpawnChance = this.spawnInterval;
+    }
 
     void Update()
     {
@@ -35,7 +44,7 @@ public class Spawner : MonoBehaviour
 
         var chance = Random.value;
 
-        return (chance <= spawnChance || timeSinceLastSpawn >= minSpawnInterval);
+        return (chance <= spawnChance * actualSpawnRateMultiplier || timeSinceLastSpawn >= minSpawnInterval);
     }
 
     public void SpawnRandom(bool force = false)
@@ -46,6 +55,16 @@ public class Spawner : MonoBehaviour
 
     public void Spawn(int index, bool force = false)
     {
+        // Index 2 is the power systems going offline
+        if(index < 2) 
+        {
+            this.actualSpawnRateMultiplier = this.spawnRateMultiplier;
+        }
+        else
+        {
+            this.actualSpawnRateMultiplier = 1;
+        }
+
         var spawnable = items[index];
 
         if (!force && !CanSpawn(spawnable))

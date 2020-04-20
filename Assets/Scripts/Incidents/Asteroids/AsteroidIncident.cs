@@ -7,6 +7,8 @@ namespace Assets.Scripts.Incidents
         public Spawner asteroidSpawner;
         public float duration = 90;
 
+        public int spawnRateMultiplier;
+
         private float time = 0;
 
         public override bool CanSpawn()
@@ -18,7 +20,7 @@ namespace Assets.Scripts.Incidents
         public override void Spawn()
         {
             GameManager.Instance.SetAsteroidFieldActive(true);
-            asteroidSpawner.enabled = true;
+            asteroidSpawner.spawnRateMultiplier = this.spawnRateMultiplier;
             time = 0;
         }
 
@@ -26,7 +28,7 @@ namespace Assets.Scripts.Incidents
         {
             var active = GameManager.Instance.IsAsteroidFieldActive;
 
-            asteroidSpawner.enabled = active;
+            asteroidSpawner.spawnRateMultiplier = active ? this.spawnRateMultiplier : 1;
 
             if (active)
             {
@@ -34,7 +36,7 @@ namespace Assets.Scripts.Incidents
 
                 if (time >= duration)
                 {
-                    asteroidSpawner.enabled = false;
+                    asteroidSpawner.spawnRateMultiplier = 1;
                     GameManager.Instance.SetAsteroidFieldActive(false);
                     Debug.Log("asteroids finished");
                 }
