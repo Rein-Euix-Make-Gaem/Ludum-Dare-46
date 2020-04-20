@@ -170,11 +170,12 @@ MonoBehaviour:
   TVScreen: {fileID: 4965279882178680885}
   CurrentUpsetValue: 0
   BaseCalmingRate: 0.05
-  BaseFreakingRate: 0.05
+  BaseFreakingRate: 0.03
   FastCalmingModifier: 5
   FastFreakingModifier: 1.5
   HasDistractions: 0
   IsPlayerPresent: 0
+  worriedEvent: event:/Worried
 --- !u!114 &6817478728857749115
 MonoBehaviour:
   m_ObjectHideFlags: 0

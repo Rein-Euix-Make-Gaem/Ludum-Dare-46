@@ -1145,13 +1145,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8251810498914702483}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1300,13 +1300,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5949352738881162759}
-    characterCount: 35
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1383,14 +1383,14 @@ MonoBehaviour:
   IsAsteroidFieldActive: 0
   AlarmColor: {r: 1, g: 1, b: 1, a: 1}
   CurrentOxygen: 100
-  BaseOxygenProductionRate: 0.1
-  BaseSmallOxygenLossRate: 0.01
-  BaseLargeOxygenLossRate: 0.05
+  BaseOxygenProductionRate: 0.05
+  BaseSmallOxygenLossRate: 0.008
+  BaseLargeOxygenLossRate: 0.015
   MajorHoles: 0
   MinorHoles: 0
   SuffocationTime: 10
   ElapsedSuffocationTime: 0
-  TimeToWin: 0
+  TimeToWin: 360
   TimeRemaining: 0
 --- !u!1 &4896208182131807632
 GameObject:

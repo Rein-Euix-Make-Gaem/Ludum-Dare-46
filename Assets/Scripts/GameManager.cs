@@ -92,13 +92,13 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void WinGame()
     {
         this.isPlaying = false;
-        // this.WinScreen.enabled = true;
+        this.WinScreen.gameObject.SetActive(true);
     }
 
     public void ReturnToTitle()
     {
         this.LoseScreen.gameObject.SetActive(false);
-        // this.WinScreen.gameObject.SetActive(false);
+        this.WinScreen.gameObject.SetActive(false);
         this.IsFirstPersonControllerEnabled = false;
         SceneManager.LoadScene(this.TitleScene);
     }

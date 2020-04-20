@@ -29,8 +29,10 @@ public class TabletWarningManager : MonoBehaviour
         SmallHoleWarningObject.SetActive(gameManager.MinorHoles > 0);
 
         string minutes = ((int)gameManager.TimeRemaining / 60).ToString();
-        string seconds = (gameManager.TimeRemaining % 60).ToString("f0");
+        int secs = Mathf.RoundToInt(gameManager.TimeRemaining % 60);
 
-        this.WinTimer.text = minutes + ":" + seconds;
+        string seconds = secs < 10 ? "0" + secs.ToString() : secs.ToString();
+
+        this.WinTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
