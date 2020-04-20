@@ -19,6 +19,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     private bool HasDistractions;
     [SerializeField]
     private bool IsPlayerPresent;
+    private Material dynamicCreatureMaterial;
 
     public string worriedEvent = "event:/Worried";
     FMOD.Studio.EventInstance worriedSound;
@@ -31,6 +32,7 @@ public class CreatureAttitudeManager : MonoBehaviour
         this.IsPlayerPresent = false;
 
         worriedSound = FMODUnity.RuntimeManager.CreateInstance(worriedEvent);
+        dynamicCreatureMaterial = new Material(CreatureMaterial);
     }
 
     // Update is called once per frame
@@ -91,18 +93,13 @@ public class CreatureAttitudeManager : MonoBehaviour
             this.CurrentUpsetValue += this.BaseFreakingRate * this.FastFreakingModifier;
         }
 
-        this.CurrentUpsetValue = (this.CurrentUpsetValue < 0) 
-            ? 0 
-            : (this.CurrentUpsetValue > 100) 
-                ? 100 
-                : this.CurrentUpsetValue;
+        CurrentUpsetValue = Mathf.Clamp(CurrentUpsetValue, 0, 100);
 
         if (start <= 66 && this.CurrentUpsetValue > 66){
             worriedSound.start();
         }
 
-
-        CreatureMaterial.color = new Color(CurrentUpsetValue / 20f, CreatureMaterial.color.g, CreatureMaterial.color.b);
+        dynamicCreatureMaterial.color = new Color(CurrentUpsetValue / 20f, dynamicCreatureMaterial.color.g, dynamicCreatureMaterial.color.b);
     }
 
     private void OnTriggerEnter(Collider collider)

@@ -1,6 +1,4 @@
-﻿using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Extensions;
 using UnityEngine;
 
 public class HoleLocation : MonoBehaviour
@@ -10,12 +8,10 @@ public class HoleLocation : MonoBehaviour
     public LargeHoleInteraction LargeHoleObject;
     public GameObject CardboardPatchObject;
     public GameObject SmallPatchObject;
-
-    private HoleSize LatestHoleSize;
-
-
     public string hitEvent = "event:/AsteroidHit";
-    FMOD.Studio.EventInstance hitSound;
+
+    private FMOD.Studio.EventInstance hitSound;
+    private HoleSize LatestHoleSize;
 
     private enum HoleSize
     {
@@ -24,7 +20,6 @@ public class HoleLocation : MonoBehaviour
         Large
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         this.LatestHoleSize = HoleSize.None;
@@ -37,9 +32,9 @@ public class HoleLocation : MonoBehaviour
         hitSound = FMODUnity.RuntimeManager.CreateInstance(hitEvent);
     }
 
-    // Update is called once per frame
     void Update()
     {
+
         if (this.SmallHoleObject.gameObject.activeSelf)
         {
             this.IsActive = true;
@@ -61,10 +56,17 @@ public class HoleLocation : MonoBehaviour
         }
     }
 
+    private void HitSound(Transform transform)
+    {
+        hitSound.set3DAttributes(transform.ToFModAttributes());
+        hitSound.start();
+    }
+
     public void CreateSmallHole()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().SmallShake();
-        hitSound.start();
+
+        HitSound(SmallHoleObject.transform);
 
         this.IsActive = true;
 
@@ -81,7 +83,8 @@ public class HoleLocation : MonoBehaviour
     public void CreateLargeHole()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().BigShake();
-        hitSound.start();
+
+        HitSound(LargeHoleObject.transform);
 
         this.IsActive = true;
 

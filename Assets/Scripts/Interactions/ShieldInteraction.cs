@@ -15,7 +15,10 @@
         {
             base.OnStart();
             activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);
-            activatedSound = FMODUnity.RuntimeManager.CreateInstance(deActivationEvent);
+            deActivationSound = FMODUnity.RuntimeManager.CreateInstance(deActivationEvent);
+            // HACK: adjust sounds since the sound guy is busy
+            activatedSound.setVolume(0.20f);
+            deActivationSound.setVolume(0.20f);
         }
 
         protected override void OnInteract(ref InteractionEvent ev)

@@ -213,7 +213,6 @@ GameObject:
   - component: {fileID: 5757086}
   - component: {fileID: 5757087}
   - component: {fileID: 5757088}
-  - component: {fileID: 5757089}
   m_Layer: 0
   m_Name: Point light (6)
   m_TagString: Untagged
@@ -315,19 +314,6 @@ MonoBehaviour:
   responseTime: 25
   inheritIntesity: 1
   on: 1
---- !u!114 &5757089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5757085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alarmIntensity: 2
 --- !u!1001 &7454662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11883,7 +11869,6 @@ GameObject:
   - component: {fileID: 434629254}
   - component: {fileID: 434629255}
   - component: {fileID: 434629256}
-  - component: {fileID: 434629257}
   m_Layer: 0
   m_Name: Point light (5)
   m_TagString: Untagged
@@ -11985,19 +11970,6 @@ MonoBehaviour:
   responseTime: 25
   inheritIntesity: 1
   on: 1
---- !u!114 &434629257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434629253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alarmIntensity: 2
 --- !u!1001 &437755521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37717,6 +37689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283542594}
   - component: {fileID: 1283542595}
+  - component: {fileID: 1283542596}
   m_Layer: 0
   m_Name: Point light (4)
   m_TagString: Untagged
@@ -37799,6 +37772,25 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1283542596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283542593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 10
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
 --- !u!1001 &1285049759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37891,7 +37883,6 @@ GameObject:
   - component: {fileID: 1286736018}
   - component: {fileID: 1286736019}
   - component: {fileID: 1286736020}
-  - component: {fileID: 1286736021}
   m_Layer: 0
   m_Name: Point light (7)
   m_TagString: Untagged
@@ -37993,19 +37984,6 @@ MonoBehaviour:
   responseTime: 25
   inheritIntesity: 1
   on: 1
---- !u!114 &1286736021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286736017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alarmIntensity: 2
 --- !u!1001 &1288878387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51677,7 +51655,6 @@ GameObject:
   - component: {fileID: 1793413362}
   - component: {fileID: 1793413363}
   - component: {fileID: 1793413364}
-  - component: {fileID: 1793413365}
   m_Layer: 0
   m_Name: Point light (8)
   m_TagString: Untagged
@@ -51779,19 +51756,6 @@ MonoBehaviour:
   responseTime: 25
   inheritIntesity: 1
   on: 1
---- !u!114 &1793413365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793413361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alarmIntensity: 2
 --- !u!1001 &1803368676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58166,6 +58130,11 @@ PrefabInstance:
     - target: {fileID: 4994123908107598, guid: 1e79e14c76328e345832311c4909a2b9, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64695081298429638, guid: 1e79e14c76328e345832311c4909a2b9,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e79e14c76328e345832311c4909a2b9, type: 3}
