@@ -13,10 +13,10 @@ public class OxygenSystemInteraction : ToggleInteraction
     private bool oxygenEnabled = false;
 
 
-    public string activatedEvent = "";
+    public string activatedEvent = "event:/OxygenActivated";
     FMOD.Studio.EventInstance activatedSound;
 
-    public string deActivationEvent = "";
+    public string deActivationEvent = "event:/OxygenDeactivated";
     FMOD.Studio.EventInstance deActivationSound;
 
     private string inactive = "INACTIVE";
@@ -35,10 +35,13 @@ public class OxygenSystemInteraction : ToggleInteraction
 
         this.oxygenEnabled = !this.oxygenEnabled;
 
-        if (this.oxygenEnabled){        
+        if (this.oxygenEnabled)
+        {
+            deActivationSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             activatedSound.start();
         }
         else {
+            activatedSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             deActivationSound.start();
         }
 
