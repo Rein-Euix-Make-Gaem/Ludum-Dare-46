@@ -9,9 +9,9 @@ public class OxygenSystemInteraction : ToggleInteraction
 {
     public GameObject target;
     public TMP_Text ActiveStatusText;
+    public GameObject ScreenObject;
 
     private bool oxygenEnabled = false;
-
 
     public string activatedEvent = "";
     FMOD.Studio.EventInstance activatedSound;
@@ -21,6 +21,18 @@ public class OxygenSystemInteraction : ToggleInteraction
 
     private string inactive = "INACTIVE";
     private string active = "ACTIVE";
+
+    private bool isCurrentlyPowered = true;
+
+    private void Update()
+    {
+        if (GameManager.Instance.IsPowerActive != this.isCurrentlyPowered)
+        {
+            this.isCurrentlyPowered = GameManager.Instance.IsPowerActive;
+            this.ScreenObject.SetActive(this.isCurrentlyPowered);
+            this.canInteract = this.isCurrentlyPowered;
+        }
+    }
 
     private void Start()
     {

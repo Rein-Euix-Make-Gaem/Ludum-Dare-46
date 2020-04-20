@@ -28,8 +28,8 @@ public class TabletWarningManager : MonoBehaviour
         LargeHoleWarningObject.SetActive(gameManager.MajorHoles > 0);
         SmallHoleWarningObject.SetActive(gameManager.MinorHoles > 0);
 
-        string minutes = ((int)gameManager.TimeRemaining / 6000).ToString();
-        string seconds = (gameManager.TimeRemaining % 6000).ToString("f2");
+        string minutes = ((int)gameManager.TimeRemaining / 60).ToString();
+        string seconds = (gameManager.TimeRemaining % 60).ToString("f0");
 
         this.WinTimer.text = minutes + ":" + seconds;
     }

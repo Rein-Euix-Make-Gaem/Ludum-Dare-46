@@ -6020,6 +6020,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5506404411294533383, guid: 0a9742c9186d2cc43b2591fb12386032,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506404411294533383, guid: 0a9742c9186d2cc43b2591fb12386032,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506404411294533383, guid: 0a9742c9186d2cc43b2591fb12386032,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506404411294533383, guid: 0a9742c9186d2cc43b2591fb12386032,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5831933950315221395, guid: 0a9742c9186d2cc43b2591fb12386032,
         type: 3}
       propertyPath: m_textInfo.characterCount
