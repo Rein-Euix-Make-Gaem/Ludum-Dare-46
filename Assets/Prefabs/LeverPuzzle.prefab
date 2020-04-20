@@ -96,7 +96,6 @@ MonoBehaviour:
   inactiveTemplate: 
   toggled: 0
   lightController: {fileID: 8141763228915686214}
-  intensity: 10
 --- !u!1001 &1232092716913083732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bulbColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053797315855261202, guid: b223f88e01b4bd44db81adc1c51d2ebd,
+        type: 3}
+      propertyPath: intensity
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7053797315855261212, guid: b223f88e01b4bd44db81adc1c51d2ebd,
         type: 3}

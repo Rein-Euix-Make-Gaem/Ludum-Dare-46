@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5399807638587697319}
   - component: {fileID: 5399807638587697320}
   - component: {fileID: 5399807638587697323}
+  - component: {fileID: 4913057872433168920}
   - component: {fileID: 5399807638587697324}
   m_Layer: 0
   m_Name: IncidentManager
@@ -119,6 +120,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidSpawner: {fileID: 5399807638587697324}
   duration: 60
+--- !u!114 &4913057872433168920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5399807638587697316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffcd9ef83ef6b94f890072bcf2bcc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
 --- !u!114 &5399807638587697324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +148,7 @@ MonoBehaviour:
   items:
   - {fileID: 5399807638587697319}
   - {fileID: 5399807638587697320}
+  - {fileID: 4913057872433168920}
   minSpawnInterval: 30
   spawnChance: 0.01
   spawnInterval: 5

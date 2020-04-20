@@ -77,7 +77,6 @@ MonoBehaviour:
   inactiveTemplate: 
   toggled: 0
   lightController: {fileID: 8267740974852957641}
-  intensity: 10
 --- !u!1001 &162604687079118316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 7053797315855261202, guid: b223f88e01b4bd44db81adc1c51d2ebd,
         type: 3}
       propertyPath: intensity
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7053797315855261212, guid: b223f88e01b4bd44db81adc1c51d2ebd,
         type: 3}
