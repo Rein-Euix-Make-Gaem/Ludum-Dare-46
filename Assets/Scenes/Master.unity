@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -212,6 +212,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5757086}
   - component: {fileID: 5757087}
+  - component: {fileID: 5757088}
+  - component: {fileID: 5757089}
   m_Layer: 0
   m_Name: Point light (6)
   m_TagString: Untagged
@@ -231,7 +233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 61
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &5757087
 Light:
@@ -294,6 +296,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5757088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5757085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &5757089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5757085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &7454662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,6 +413,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7958492}
   - component: {fileID: 7958493}
+  - component: {fileID: 7958494}
+  - component: {fileID: 7958495}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -398,7 +434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -50, y: -30, z: 0}
 --- !u!108 &7958493
 Light:
@@ -461,6 +497,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &7958494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &7958495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &10241036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2051,6 +2119,8 @@ GameObject:
   m_Component:
   - component: {fileID: 88226390}
   - component: {fileID: 88226391}
+  - component: {fileID: 88226392}
+  - component: {fileID: 88226393}
   m_Layer: 0
   m_Name: Directional Light (3)
   m_TagString: Untagged
@@ -2070,7 +2140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!108 &88226391
 Light:
@@ -2133,6 +2203,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &88226392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88226389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &88226393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88226389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &90009827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2444,6 +2546,8 @@ GameObject:
   m_Component:
   - component: {fileID: 107352630}
   - component: {fileID: 107352631}
+  - component: {fileID: 107352632}
+  - component: {fileID: 107352633}
   m_Layer: 0
   m_Name: Point light (25)
   m_TagString: Untagged
@@ -2463,7 +2567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 43
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &107352631
 Light:
@@ -2526,6 +2630,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &107352632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107352629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &107352633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107352629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &107902578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2922,7 +3058,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -3014,6 +3150,8 @@ GameObject:
   m_Component:
   - component: {fileID: 127238027}
   - component: {fileID: 127238028}
+  - component: {fileID: 127238029}
+  - component: {fileID: 127238030}
   m_Layer: 0
   m_Name: Point light (22)
   m_TagString: Untagged
@@ -3033,7 +3171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 40
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &127238028
 Light:
@@ -3096,6 +3234,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &127238029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127238026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &127238030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127238026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &134554961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3928,6 +4098,8 @@ GameObject:
   m_Component:
   - component: {fileID: 154368920}
   - component: {fileID: 154368921}
+  - component: {fileID: 154368922}
+  - component: {fileID: 154368923}
   m_Layer: 0
   m_Name: Point light (46)
   m_TagString: Untagged
@@ -3947,7 +4119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 73
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &154368921
 Light:
@@ -4010,6 +4182,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &154368922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154368919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &154368923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154368919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &157669524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4323,6 +4527,8 @@ GameObject:
   m_Component:
   - component: {fileID: 174468572}
   - component: {fileID: 174468573}
+  - component: {fileID: 174468574}
+  - component: {fileID: 174468575}
   m_Layer: 0
   m_Name: Point light (2)
   m_TagString: Untagged
@@ -4342,7 +4548,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &174468573
 Light:
@@ -4405,6 +4611,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &174468574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174468571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &174468575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174468571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &177372582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5049,6 +5287,8 @@ GameObject:
   m_Component:
   - component: {fileID: 201299361}
   - component: {fileID: 201299362}
+  - component: {fileID: 201299363}
+  - component: {fileID: 201299364}
   m_Layer: 0
   m_Name: Point light (16)
   m_TagString: Untagged
@@ -5068,7 +5308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 34
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &201299362
 Light:
@@ -5131,6 +5371,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &201299363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201299360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &201299364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201299360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &203533995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5503,6 +5775,8 @@ GameObject:
   m_Component:
   - component: {fileID: 221604763}
   - component: {fileID: 221604764}
+  - component: {fileID: 221604765}
+  - component: {fileID: 221604766}
   m_Layer: 0
   m_Name: Point light (44)
   m_TagString: Untagged
@@ -5522,7 +5796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 70
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &221604764
 Light:
@@ -5585,6 +5859,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &221604765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221604762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &221604766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221604762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &222748911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6573,7 +6879,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1682300278}
   - {fileID: 1625217762}
   - {fileID: 888108953}
   - {fileID: 7958492}
@@ -6582,7 +6887,6 @@ Transform:
   - {fileID: 88226390}
   - {fileID: 174468572}
   - {fileID: 277310800}
-  - {fileID: 1641853433}
   - {fileID: 378099681}
   - {fileID: 1186459209}
   - {fileID: 2137272805}
@@ -6597,10 +6901,8 @@ Transform:
   - {fileID: 823596426}
   - {fileID: 1653461549}
   - {fileID: 898263059}
-  - {fileID: 1192410325}
   - {fileID: 1440585015}
   - {fileID: 284098563}
-  - {fileID: 1443035817}
   - {fileID: 2103347872}
   - {fileID: 293304837}
   - {fileID: 758530122}
@@ -6645,14 +6947,11 @@ Transform:
   - {fileID: 1993879900}
   - {fileID: 221604763}
   - {fileID: 457040966}
-  - {fileID: 2098880652}
   - {fileID: 154368920}
   - {fileID: 604682995}
-  - {fileID: 1333533011}
-  - {fileID: 1344964639}
-  - {fileID: 1341367256}
+  - {fileID: 480213929}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &261304061
 PrefabInstance:
@@ -6861,6 +7160,8 @@ GameObject:
   m_Component:
   - component: {fileID: 272664543}
   - component: {fileID: 272664544}
+  - component: {fileID: 272664545}
+  - component: {fileID: 272664546}
   m_Layer: 0
   m_Name: Point light (2)
   m_TagString: Untagged
@@ -6880,7 +7181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 57
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &272664544
 Light:
@@ -6943,6 +7244,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &272664545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272664542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &272664546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272664542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &275850759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7020,6 +7353,8 @@ GameObject:
   m_Component:
   - component: {fileID: 277310800}
   - component: {fileID: 277310801}
+  - component: {fileID: 277310802}
+  - component: {fileID: 277310803}
   m_Layer: 0
   m_Name: Point light (3)
   m_TagString: Untagged
@@ -7039,7 +7374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &277310801
 Light:
@@ -7102,6 +7437,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &277310802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277310799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &277310803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277310799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &279524611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7230,6 +7597,8 @@ GameObject:
   m_Component:
   - component: {fileID: 284098563}
   - component: {fileID: 284098564}
+  - component: {fileID: 284098565}
+  - component: {fileID: 284098566}
   m_Layer: 0
   m_Name: Point light (11)
   m_TagString: Untagged
@@ -7249,7 +7618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &284098564
 Light:
@@ -7312,6 +7681,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &284098565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284098562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &284098566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284098562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &284313243
 GameObject:
   m_ObjectHideFlags: 0
@@ -7322,6 +7723,8 @@ GameObject:
   m_Component:
   - component: {fileID: 284313244}
   - component: {fileID: 284313245}
+  - component: {fileID: 284313246}
+  - component: {fileID: 284313247}
   m_Layer: 0
   m_Name: Point light (18)
   m_TagString: Untagged
@@ -7341,7 +7744,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 36
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &284313245
 Light:
@@ -7404,6 +7807,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &284313246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284313243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &284313247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284313243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &284666222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7591,6 +8026,8 @@ GameObject:
   m_Component:
   - component: {fileID: 293304837}
   - component: {fileID: 293304838}
+  - component: {fileID: 293304839}
+  - component: {fileID: 293304840}
   m_Layer: 0
   m_Name: Point light (12)
   m_TagString: Untagged
@@ -7610,7 +8047,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 29
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &293304838
 Light:
@@ -7673,6 +8110,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &293304839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293304836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &293304840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293304836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &293800607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8278,7 +8747,7 @@ PrefabInstance:
     - target: {fileID: 6899726338814360283, guid: b82865088c81659409e09cd6c8894afc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 6899726338814360283, guid: b82865088c81659409e09cd6c8894afc,
         type: 3}
@@ -8441,7 +8910,7 @@ PrefabInstance:
     - target: {fileID: 6899726338814360283, guid: b82865088c81659409e09cd6c8894afc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6899726338814360283, guid: b82865088c81659409e09cd6c8894afc,
         type: 3}
@@ -9256,6 +9725,8 @@ GameObject:
   m_Component:
   - component: {fileID: 348490675}
   - component: {fileID: 348490676}
+  - component: {fileID: 348490677}
+  - component: {fileID: 348490678}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -9275,7 +9746,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 33
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &348490676
 Light:
@@ -9338,6 +9809,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &348490677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348490674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &348490678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348490674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &359870225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9451,7 +9954,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -9802,6 +10305,8 @@ GameObject:
   m_Component:
   - component: {fileID: 378099681}
   - component: {fileID: 378099682}
+  - component: {fileID: 378099683}
+  - component: {fileID: 378099684}
   m_Layer: 0
   m_Name: Point light (4)
   m_TagString: Untagged
@@ -9821,7 +10326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &378099682
 Light:
@@ -9884,6 +10389,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &378099683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378099680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &378099684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378099680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &378931966
 GameObject:
   m_ObjectHideFlags: 0
@@ -9894,6 +10431,8 @@ GameObject:
   m_Component:
   - component: {fileID: 378931967}
   - component: {fileID: 378931968}
+  - component: {fileID: 378931969}
+  - component: {fileID: 378931970}
   m_Layer: 0
   m_Name: Point light (19)
   m_TagString: Untagged
@@ -9913,7 +10452,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 37
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &378931968
 Light:
@@ -9976,6 +10515,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &378931969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378931966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &378931970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378931966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &383786391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10168,7 +10739,7 @@ PrefabInstance:
     - target: {fileID: 1394134384065034874, guid: 84a7dbaf14475c54095b7d8d1a53026d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1394134384065034874, guid: 84a7dbaf14475c54095b7d8d1a53026d,
         type: 3}
@@ -11331,6 +11902,8 @@ GameObject:
   m_Component:
   - component: {fileID: 434629254}
   - component: {fileID: 434629255}
+  - component: {fileID: 434629256}
+  - component: {fileID: 434629257}
   m_Layer: 0
   m_Name: Point light (5)
   m_TagString: Untagged
@@ -11350,7 +11923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 60
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &434629255
 Light:
@@ -11413,6 +11986,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &434629256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434629253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &434629257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434629253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &437755521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11900,6 +12505,8 @@ GameObject:
   m_Component:
   - component: {fileID: 457040966}
   - component: {fileID: 457040967}
+  - component: {fileID: 457040968}
+  - component: {fileID: 457040969}
   m_Layer: 0
   m_Name: Point light (45)
   m_TagString: Untagged
@@ -11919,7 +12526,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 71
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &457040967
 Light:
@@ -11982,6 +12589,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &457040968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457040965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &457040969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457040965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &463554766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12059,6 +12698,8 @@ GameObject:
   m_Component:
   - component: {fileID: 464814874}
   - component: {fileID: 464814875}
+  - component: {fileID: 464814876}
+  - component: {fileID: 464814877}
   m_Layer: 0
   m_Name: Point light (1)
   m_TagString: Untagged
@@ -12078,7 +12719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &464814875
 Light:
@@ -12141,6 +12782,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &464814876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464814873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &464814877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464814873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &465091368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12273,6 +12946,8 @@ GameObject:
   m_Component:
   - component: {fileID: 465177472}
   - component: {fileID: 465177473}
+  - component: {fileID: 465177474}
+  - component: {fileID: 465177475}
   m_Layer: 0
   m_Name: Point light (31)
   m_TagString: Untagged
@@ -12292,7 +12967,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 49
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &465177473
 Light:
@@ -12355,6 +13030,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &465177474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465177471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &465177475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465177471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &465827920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12999,6 +13706,44 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 479468278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &480213928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480213929}
+  m_Layer: 0
+  m_Name: ReflectionProbes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480213929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480213928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1682300278}
+  - {fileID: 1641853433}
+  - {fileID: 1192410325}
+  - {fileID: 1443035817}
+  - {fileID: 2098880652}
+  - {fileID: 1333533011}
+  - {fileID: 1344964639}
+  - {fileID: 1341367256}
+  m_Father: {fileID: 258651852}
+  m_RootOrder: 70
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &484557638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13395,6 +14140,8 @@ GameObject:
   m_Component:
   - component: {fileID: 498561220}
   - component: {fileID: 498561221}
+  - component: {fileID: 498561222}
+  - component: {fileID: 498561223}
   m_Layer: 0
   m_Name: Point light (1)
   m_TagString: Untagged
@@ -13414,7 +14161,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 56
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &498561221
 Light:
@@ -13477,6 +14224,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &498561222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498561219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &498561223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498561219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &501805686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15963,6 +16742,8 @@ GameObject:
   m_Component:
   - component: {fileID: 604256825}
   - component: {fileID: 604256826}
+  - component: {fileID: 604256827}
+  - component: {fileID: 604256828}
   m_Layer: 0
   m_Name: Point light (1)
   m_TagString: Untagged
@@ -15982,7 +16763,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &604256826
 Light:
@@ -16045,6 +16826,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &604256827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604256824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &604256828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604256824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &604682994
 GameObject:
   m_ObjectHideFlags: 0
@@ -16055,6 +16868,8 @@ GameObject:
   m_Component:
   - component: {fileID: 604682995}
   - component: {fileID: 604682996}
+  - component: {fileID: 604682997}
+  - component: {fileID: 604682998}
   m_Layer: 0
   m_Name: Point light (47)
   m_TagString: Untagged
@@ -16074,7 +16889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 74
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &604682996
 Light:
@@ -16137,6 +16952,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &604682997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604682994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &604682998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604682994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &606526193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16372,7 +17219,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -16939,6 +17786,8 @@ GameObject:
   m_Component:
   - component: {fileID: 647919340}
   - component: {fileID: 647919341}
+  - component: {fileID: 647919342}
+  - component: {fileID: 647919343}
   m_Layer: 0
   m_Name: Point light (34)
   m_TagString: Untagged
@@ -16958,7 +17807,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 52
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &647919341
 Light:
@@ -17021,6 +17870,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &647919342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647919339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &647919343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647919339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &648341161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17995,6 +18876,8 @@ GameObject:
   m_Component:
   - component: {fileID: 679374300}
   - component: {fileID: 679374301}
+  - component: {fileID: 679374302}
+  - component: {fileID: 679374303}
   m_Layer: 0
   m_Name: Point light (32)
   m_TagString: Untagged
@@ -18014,7 +18897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 50
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &679374301
 Light:
@@ -18077,6 +18960,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &679374302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679374299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &679374303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679374299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &679813561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19200,7 +20115,7 @@ Transform:
   - {fileID: 1273589217}
   - {fileID: 2067564900}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &688603553
 PrefabInstance:
@@ -19824,7 +20739,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &717754483
 PrefabInstance:
@@ -20009,6 +20924,8 @@ GameObject:
   m_Component:
   - component: {fileID: 729226310}
   - component: {fileID: 729226311}
+  - component: {fileID: 729226312}
+  - component: {fileID: 729226313}
   m_Layer: 0
   m_Name: Point light (40)
   m_TagString: Untagged
@@ -20028,7 +20945,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 66
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &729226311
 Light:
@@ -20091,6 +21008,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &729226312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729226309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &729226313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729226309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &729935934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21062,6 +22011,8 @@ GameObject:
   m_Component:
   - component: {fileID: 758530122}
   - component: {fileID: 758530123}
+  - component: {fileID: 758530124}
+  - component: {fileID: 758530125}
   m_Layer: 0
   m_Name: Point light (13)
   m_TagString: Untagged
@@ -21081,7 +22032,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 30
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &758530123
 Light:
@@ -21144,6 +22095,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &758530124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758530121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &758530125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758530121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &762322359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21217,6 +22200,8 @@ GameObject:
   m_Component:
   - component: {fileID: 765728343}
   - component: {fileID: 765728344}
+  - component: {fileID: 765728345}
+  - component: {fileID: 765728346}
   m_Layer: 0
   m_Name: Point light (2)
   m_TagString: Untagged
@@ -21236,7 +22221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &765728344
 Light:
@@ -21299,6 +22284,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &765728345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765728342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &765728346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765728342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &766490048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21553,6 +22570,8 @@ GameObject:
   m_Component:
   - component: {fileID: 774904307}
   - component: {fileID: 774904308}
+  - component: {fileID: 774904309}
+  - component: {fileID: 774904310}
   m_Layer: 0
   m_Name: Point light (30)
   m_TagString: Untagged
@@ -21572,7 +22591,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 48
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &774904308
 Light:
@@ -21635,6 +22654,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &774904309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774904306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &774904310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774904306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &779074666
 GameObject:
   m_ObjectHideFlags: 0
@@ -21645,6 +22696,8 @@ GameObject:
   m_Component:
   - component: {fileID: 779074667}
   - component: {fileID: 779074668}
+  - component: {fileID: 779074669}
+  - component: {fileID: 779074670}
   m_Layer: 0
   m_Name: Point light (23)
   m_TagString: Untagged
@@ -21664,7 +22717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 41
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &779074668
 Light:
@@ -21727,6 +22780,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &779074669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779074666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &779074670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779074666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &781695863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22473,6 +23558,8 @@ GameObject:
   m_Component:
   - component: {fileID: 823240830}
   - component: {fileID: 823240831}
+  - component: {fileID: 823240832}
+  - component: {fileID: 823240833}
   m_Layer: 0
   m_Name: Point light (39)
   m_TagString: Untagged
@@ -22492,7 +23579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 65
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &823240831
 Light:
@@ -22555,6 +23642,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &823240832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823240829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &823240833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823240829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &823596425
 GameObject:
   m_ObjectHideFlags: 0
@@ -22565,6 +23684,8 @@ GameObject:
   m_Component:
   - component: {fileID: 823596426}
   - component: {fileID: 823596427}
+  - component: {fileID: 823596428}
+  - component: {fileID: 823596429}
   m_Layer: 0
   m_Name: Point light (8)
   m_TagString: Untagged
@@ -22584,7 +23705,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &823596427
 Light:
@@ -22647,6 +23768,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &823596428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823596425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &823596429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823596425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &823749791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24314,6 +25467,8 @@ GameObject:
   m_Component:
   - component: {fileID: 887674153}
   - component: {fileID: 887674154}
+  - component: {fileID: 887674155}
+  - component: {fileID: 887674156}
   m_Layer: 0
   m_Name: Point light (15)
   m_TagString: Untagged
@@ -24333,7 +25488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 32
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &887674154
 Light:
@@ -24396,6 +25551,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &887674155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887674152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &887674156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887674152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &888108952
 GameObject:
   m_ObjectHideFlags: 0
@@ -24406,6 +25593,8 @@ GameObject:
   m_Component:
   - component: {fileID: 888108953}
   - component: {fileID: 888108954}
+  - component: {fileID: 888108955}
+  - component: {fileID: 888108956}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -24425,7 +25614,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &888108954
 Light:
@@ -24488,6 +25677,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &888108955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888108952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &888108956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888108952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &892240688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24742,6 +25963,8 @@ GameObject:
   m_Component:
   - component: {fileID: 898263059}
   - component: {fileID: 898263060}
+  - component: {fileID: 898263061}
+  - component: {fileID: 898263062}
   m_Layer: 0
   m_Name: Point light (10)
   m_TagString: Untagged
@@ -24761,7 +25984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &898263060
 Light:
@@ -24824,6 +26047,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &898263061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898263058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &898263062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898263058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &899653047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25516,7 +26771,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -26333,6 +27588,8 @@ GameObject:
   m_Component:
   - component: {fileID: 942849034}
   - component: {fileID: 942849035}
+  - component: {fileID: 942849036}
+  - component: {fileID: 942849037}
   m_Layer: 0
   m_Name: Directional Light (2)
   m_TagString: Untagged
@@ -26352,7 +27609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &942849035
 Light:
@@ -26415,6 +27672,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &942849036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942849033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &942849037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942849033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &944053798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26879,7 +28168,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -27485,6 +28774,8 @@ GameObject:
   m_Component:
   - component: {fileID: 973107992}
   - component: {fileID: 973107993}
+  - component: {fileID: 973107994}
+  - component: {fileID: 973107995}
   m_Layer: 0
   m_Name: Point light (35)
   m_TagString: Untagged
@@ -27504,7 +28795,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 53
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &973107993
 Light:
@@ -27567,6 +28858,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &973107994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973107991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &973107995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973107991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &974179017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28187,6 +29510,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1000135157}
   - component: {fileID: 1000135158}
+  - component: {fileID: 1000135159}
+  - component: {fileID: 1000135160}
   m_Layer: 0
   m_Name: Point light (21)
   m_TagString: Untagged
@@ -28206,7 +29531,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 39
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1000135158
 Light:
@@ -28269,6 +29594,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1000135159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000135156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1000135160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000135156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1003788622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28777,6 +30134,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1009861894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1009984579
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6936314479428757793, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_Name
+      value: HoleLocation 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.415085
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5cf9017aefbf81409d965c36eabb7e3, type: 3}
 --- !u!1001 &1010412117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28925,6 +30351,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1020237310}
   - component: {fileID: 1020237311}
+  - component: {fileID: 1020237312}
+  - component: {fileID: 1020237313}
   m_Layer: 0
   m_Name: Point light (17)
   m_TagString: Untagged
@@ -28944,7 +30372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 35
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1020237311
 Light:
@@ -29007,6 +30435,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1020237312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020237309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1020237313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020237309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1021138236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29584,6 +31044,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1041050320}
   - component: {fileID: 1041050321}
+  - component: {fileID: 1041050322}
+  - component: {fileID: 1041050323}
   m_Layer: 0
   m_Name: Point light (20)
   m_TagString: Untagged
@@ -29603,7 +31065,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 38
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1041050321
 Light:
@@ -29666,6 +31128,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1041050322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041050319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1041050323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041050319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1047184562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32111,6 +33605,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1129392752}
   - component: {fileID: 1129392753}
+  - component: {fileID: 1129392754}
+  - component: {fileID: 1129392755}
   m_Layer: 0
   m_Name: Point light (3)
   m_TagString: Untagged
@@ -32130,7 +33626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 58
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1129392753
 Light:
@@ -32193,6 +33689,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1129392754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129392751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1129392755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129392751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1133523563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32644,6 +34172,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1146922131}
   - component: {fileID: 1146922132}
+  - component: {fileID: 1146922133}
+  - component: {fileID: 1146922134}
   m_Layer: 0
   m_Name: Point light (27)
   m_TagString: Untagged
@@ -32663,7 +34193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 45
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1146922132
 Light:
@@ -32726,6 +34256,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1146922133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146922130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1146922134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146922130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1147303020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33000,6 +34562,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1153194007}
   - component: {fileID: 1153194008}
+  - component: {fileID: 1153194009}
+  - component: {fileID: 1153194010}
   m_Layer: 0
   m_Name: Point light (2)
   m_TagString: Untagged
@@ -33019,7 +34583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1153194008
 Light:
@@ -33082,6 +34646,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1153194009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153194006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1153194010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153194006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1153865235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33343,7 +34939,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 42
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1159691487
 Light:
@@ -33701,7 +35297,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1178574712
 MonoBehaviour:
@@ -33785,6 +35381,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1186459209}
   - component: {fileID: 1186459210}
+  - component: {fileID: 1186459211}
+  - component: {fileID: 1186459212}
   m_Layer: 0
   m_Name: Point light (5)
   m_TagString: Untagged
@@ -33804,7 +35402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1186459210
 Light:
@@ -33867,6 +35465,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1186459211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186459208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1186459212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186459208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &1192410324
 GameObject:
   m_ObjectHideFlags: 0
@@ -33895,8 +35525,8 @@ Transform:
   m_LocalPosition: {x: -49.63, y: 22.945, z: -12.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 24
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1192410326
 ReflectionProbe:
@@ -36126,7 +37756,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 59
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1283542595
 Light:
@@ -36239,7 +37869,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -36280,6 +37910,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1286736018}
   - component: {fileID: 1286736019}
+  - component: {fileID: 1286736020}
+  - component: {fileID: 1286736021}
   m_Layer: 0
   m_Name: Point light (7)
   m_TagString: Untagged
@@ -36299,7 +37931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 62
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1286736019
 Light:
@@ -36362,6 +37994,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1286736020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286736017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1286736021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286736017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1288878387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37416,10 +39080,10 @@ Transform:
   m_GameObject: {fileID: 1333533010}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 5.02, y: 23.5, z: -32.007}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 75
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1333533012
 ReflectionProbe:
@@ -37738,8 +39402,8 @@ Transform:
   m_LocalPosition: {x: -22.001, y: 24.486, z: 50.289997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 77
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1341367257
 ReflectionProbe:
@@ -37875,10 +39539,10 @@ Transform:
   m_GameObject: {fileID: 1344964638}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: -32.04, y: 23.5, z: -22.821}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 76
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1344964640
 ReflectionProbe:
@@ -38313,7 +39977,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -39203,6 +40867,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1405739889}
   - component: {fileID: 1405739890}
+  - component: {fileID: 1405739891}
+  - component: {fileID: 1405739892}
   m_Layer: 0
   m_Name: Point light (1)
   m_TagString: Untagged
@@ -39222,7 +40888,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1405739890
 Light:
@@ -39285,6 +40951,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1405739891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405739888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1405739892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405739888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1408218276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39727,6 +41425,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1419923191}
   - component: {fileID: 1419923192}
+  - component: {fileID: 1419923193}
+  - component: {fileID: 1419923194}
   m_Layer: 0
   m_Name: Point light (7)
   m_TagString: Untagged
@@ -39746,7 +41446,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1419923192
 Light:
@@ -39809,6 +41509,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1419923193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419923190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1419923194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419923190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1427020078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40331,6 +42063,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1440585015}
   - component: {fileID: 1440585016}
+  - component: {fileID: 1440585017}
+  - component: {fileID: 1440585018}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -40350,7 +42084,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 25
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1440585016
 Light:
@@ -40413,6 +42147,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1440585017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440585014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1440585018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440585014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &1443035816
 GameObject:
   m_ObjectHideFlags: 0
@@ -40441,8 +42207,8 @@ Transform:
   m_LocalPosition: {x: 0.55, y: 23.066, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 27
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1443035818
 ReflectionProbe:
@@ -41172,7 +42938,7 @@ PrefabInstance:
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
         type: 3}
@@ -41599,6 +43365,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1498524827}
   - component: {fileID: 1498524828}
+  - component: {fileID: 1498524829}
+  - component: {fileID: 1498524830}
   m_Layer: 0
   m_Name: Point light (42)
   m_TagString: Untagged
@@ -41618,7 +43386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 68
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1498524828
 Light:
@@ -41681,6 +43449,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1498524829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498524826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1498524830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498524826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1499679675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41758,6 +43558,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1501076304}
   - component: {fileID: 1501076305}
+  - component: {fileID: 1501076306}
+  - component: {fileID: 1501076307}
   m_Layer: 0
   m_Name: Point light (29)
   m_TagString: Untagged
@@ -41777,7 +43579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 47
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1501076305
 Light:
@@ -41840,6 +43642,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1501076306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501076303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1501076307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501076303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1508776158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42453,6 +44287,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1526506474}
   - component: {fileID: 1526506475}
+  - component: {fileID: 1526506476}
+  - component: {fileID: 1526506477}
   m_Layer: 0
   m_Name: Point light (3)
   m_TagString: Untagged
@@ -42472,7 +44308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1526506475
 Light:
@@ -42535,6 +44371,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1526506476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526506473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1526506477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526506473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1526745051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44141,6 +46009,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1600862374}
   - component: {fileID: 1600862375}
+  - component: {fileID: 1600862376}
+  - component: {fileID: 1600862377}
   m_Layer: 0
   m_Name: Point light (28)
   m_TagString: Untagged
@@ -44160,7 +46030,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 46
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1600862375
 Light:
@@ -44223,6 +46093,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1600862376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600862373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1600862377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600862373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1 &1602214549
 GameObject:
   m_ObjectHideFlags: 0
@@ -44233,6 +46135,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1602214550}
   - component: {fileID: 1602214551}
+  - component: {fileID: 1602214552}
+  - component: {fileID: 1602214553}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -44252,7 +46156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1602214551
 Light:
@@ -44315,6 +46219,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1602214552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602214549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1602214553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602214549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1608922796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44784,7 +46720,7 @@ PrefabInstance:
     - target: {fileID: 5399807638587697321, guid: a77d81228a67a3e499d677d6a3dc4d46,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5399807638587697321, guid: a77d81228a67a3e499d677d6a3dc4d46,
         type: 3}
@@ -44800,6 +46736,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399807638587697322, guid: a77d81228a67a3e499d677d6a3dc4d46,
+        type: 3}
+      propertyPath: minSpawnInterval
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399807638587697322, guid: a77d81228a67a3e499d677d6a3dc4d46,
+        type: 3}
+      propertyPath: spawnChance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070338865345625678, guid: a77d81228a67a3e499d677d6a3dc4d46,
+        type: 3}
+      propertyPath: pulsesPerSecond
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a77d81228a67a3e499d677d6a3dc4d46, type: 3}
@@ -44998,6 +46949,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1625217762}
   - component: {fileID: 1625217763}
+  - component: {fileID: 1625217764}
+  - component: {fileID: 1625217765}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -45017,7 +46970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1625217763
 Light:
@@ -45080,6 +47033,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1625217764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625217761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1625217765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625217761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1626326268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45484,10 +47469,10 @@ Transform:
   m_GameObject: {fileID: 1641853432}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: -20.981, y: 23.5, z: -38.08}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 9
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1641853434
 ReflectionProbe:
@@ -45599,6 +47584,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1642773414}
   - component: {fileID: 1642773415}
+  - component: {fileID: 1642773416}
+  - component: {fileID: 1642773417}
   m_Layer: 0
   m_Name: Point light (26)
   m_TagString: Untagged
@@ -45618,7 +47605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 44
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1642773415
 Light:
@@ -45681,6 +47668,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1642773416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642773413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1642773417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642773413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1644567016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46049,6 +48068,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1653461549}
   - component: {fileID: 1653461550}
+  - component: {fileID: 1653461551}
+  - component: {fileID: 1653461552}
   m_Layer: 0
   m_Name: Point light (9)
   m_TagString: Untagged
@@ -46068,7 +48089,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 22
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1653461550
 Light:
@@ -46131,6 +48152,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1653461551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653461548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1653461552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653461548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1663002070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46761,7 +48814,7 @@ Transform:
   m_LocalPosition: {x: -25.2, y: 23.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
+  m_Father: {fileID: 480213929}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &1682300279
@@ -48690,7 +50743,7 @@ PrefabInstance:
     - target: {fileID: 6899726338814360283, guid: b82865088c81659409e09cd6c8894afc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6899726338814360283, guid: b82865088c81659409e09cd6c8894afc,
         type: 3}
@@ -49274,6 +51327,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1779435070}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1784181811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102026363743079234, guid: 0a9742c9186d2cc43b2591fb12386032,
+    type: 3}
+  m_PrefabInstance: {fileID: 236699421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784181812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784181811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb1ced5f86cb4d68a267c1a9d486fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSound: event:/Step
+  walkingspeed: 0.5
 --- !u!1001 &1788357159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49623,6 +51696,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1793413362}
   - component: {fileID: 1793413363}
+  - component: {fileID: 1793413364}
+  - component: {fileID: 1793413365}
   m_Layer: 0
   m_Name: Point light (8)
   m_TagString: Untagged
@@ -49642,7 +51717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 63
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1793413363
 Light:
@@ -49705,6 +51780,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1793413364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793413361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1793413365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793413361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1803368676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50533,7 +52640,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1853252678
 PrefabInstance:
@@ -50923,6 +53030,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1872627247}
   - component: {fileID: 1872627248}
+  - component: {fileID: 1872627249}
+  - component: {fileID: 1872627250}
   m_Layer: 0
   m_Name: Point light (38)
   m_TagString: Untagged
@@ -50942,7 +53051,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 64
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1872627248
 Light:
@@ -51005,6 +53114,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1872627249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872627246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1872627250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872627246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1873058264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51999,6 +54140,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1906025355}
   - component: {fileID: 1906025356}
+  - component: {fileID: 1906025357}
+  - component: {fileID: 1906025358}
   m_Layer: 0
   m_Name: Point light (33)
   m_TagString: Untagged
@@ -52018,7 +54161,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 51
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1906025356
 Light:
@@ -52081,6 +54224,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1906025357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906025354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1906025358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906025354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1909753225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52485,6 +54660,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1925437092}
   - component: {fileID: 1925437093}
+  - component: {fileID: 1925437094}
+  - component: {fileID: 1925437095}
   m_Layer: 0
   m_Name: Point light (3)
   m_TagString: Untagged
@@ -52504,7 +54681,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1925437093
 Light:
@@ -52567,6 +54744,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1925437094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925437091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1925437095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925437091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1926371562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52677,6 +54886,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1935510621}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1937057850
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6936314479428757793, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_Name
+      value: HoleLocation 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -62.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936314479428757795, guid: c5cf9017aefbf81409d965c36eabb7e3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5cf9017aefbf81409d965c36eabb7e3, type: 3}
 --- !u!1001 &1938442767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52746,6 +55034,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1938710986}
   - component: {fileID: 1938710987}
+  - component: {fileID: 1938710988}
+  - component: {fileID: 1938710989}
   m_Layer: 0
   m_Name: Point light (41)
   m_TagString: Untagged
@@ -52765,7 +55055,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 67
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1938710987
 Light:
@@ -52828,6 +55118,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1938710988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938710985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1938710989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938710985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1939776684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53074,6 +55396,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1949349197}
   - component: {fileID: 1949349198}
+  - component: {fileID: 1949349199}
+  - component: {fileID: 1949349200}
   m_Layer: 0
   m_Name: Point light (14)
   m_TagString: Untagged
@@ -53093,7 +55417,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 31
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1949349198
 Light:
@@ -53156,6 +55480,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1949349199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949349196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1949349200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949349196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1953002425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53690,6 +56046,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1981240085}
   - component: {fileID: 1981240086}
+  - component: {fileID: 1981240087}
+  - component: {fileID: 1981240088}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -53709,7 +56067,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 55
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1981240086
 Light:
@@ -53772,6 +56130,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1981240087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981240084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1981240088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981240084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &1982950520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54360,6 +56750,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1993879900}
   - component: {fileID: 1993879901}
+  - component: {fileID: 1993879902}
+  - component: {fileID: 1993879903}
   m_Layer: 0
   m_Name: Point light (43)
   m_TagString: Untagged
@@ -54379,7 +56771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 69
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1993879901
 Light:
@@ -54442,6 +56834,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1993879902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993879899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &1993879903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993879899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &2000221689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56010,6 +58434,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: activeTemplate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: inactiveTemplate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: deActivationEvent
+      value: event:/OxygenDeactivated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: activatedEvent
+      value: event:/OxygenActivated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7203632692296885346, guid: 1f11c2640c4889d4c90bda7abc48aadc,
         type: 3}
       propertyPath: m_Name
@@ -56053,7 +58502,7 @@ PrefabInstance:
     - target: {fileID: 7203632692296885349, guid: 1f11c2640c4889d4c90bda7abc48aadc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7203632692296885349, guid: 1f11c2640c4889d4c90bda7abc48aadc,
         type: 3}
@@ -56098,10 +58547,10 @@ Transform:
   m_GameObject: {fileID: 2098880651}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 3.63, y: 23.5, z: -0.05}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 258651852}
-  m_RootOrder: 72
+  m_Father: {fileID: 480213929}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &2098880653
 ReflectionProbe:
@@ -56209,6 +58658,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2103347872}
   - component: {fileID: 2103347873}
+  - component: {fileID: 2103347874}
+  - component: {fileID: 2103347875}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -56228,7 +58679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 28
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2103347873
 Light:
@@ -56291,6 +58742,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2103347874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103347871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &2103347875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103347871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &2104258339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56802,6 +59285,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2113999437}
   - component: {fileID: 2113999438}
+  - component: {fileID: 2113999439}
+  - component: {fileID: 2113999440}
   m_Layer: 0
   m_Name: Point light (36)
   m_TagString: Untagged
@@ -56821,7 +59306,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 54
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2113999438
 Light:
@@ -56884,6 +59369,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2113999439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113999436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &2113999440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113999436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &2116433538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57422,6 +59939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2137272805}
   - component: {fileID: 2137272806}
+  - component: {fileID: 2137272807}
+  - component: {fileID: 2137272808}
   m_Layer: 0
   m_Name: Point light (6)
   m_TagString: Untagged
@@ -57441,7 +59960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 258651852}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2137272806
 Light:
@@ -57504,6 +60023,38 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2137272807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137272804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558e93ecd0fdc624c9d2b87e2fee2f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulb: {fileID: 0}
+  bulbColor: {r: 1, g: 1, b: 1, a: 1}
+  intensity: 1
+  lightIntensityMultiplier: 1
+  responseTime: 25
+  inheritIntesity: 1
+  on: 1
+--- !u!114 &2137272808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137272804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e92db2991f4b4848bd4492499b6c778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alarmIntensity: 2
 --- !u!1001 &2142680702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57809,7 +60360,7 @@ PrefabInstance:
     - target: {fileID: 942033902883932753, guid: 0cb4c6c1d4941974fafdb4521de5f6ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 942033902883932753, guid: 0cb4c6c1d4941974fafdb4521de5f6ef,
         type: 3}
@@ -57852,16 +60403,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2654798161426391004, guid: 908890c45306cb944baa11e9f29d6ae8,
-        type: 3}
-      propertyPath: ActiveStatusText
-      value: 
-      objectReference: {fileID: 640146021087944785}
-    - target: {fileID: 2654798161426391004, guid: 908890c45306cb944baa11e9f29d6ae8,
-        type: 3}
-      propertyPath: cooldown
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2934567349221514781, guid: 908890c45306cb944baa11e9f29d6ae8,
         type: 3}
       propertyPath: m_Name
@@ -57905,7 +60446,7 @@ PrefabInstance:
     - target: {fileID: 2934567349221514782, guid: 908890c45306cb944baa11e9f29d6ae8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 2934567349221514782, guid: 908890c45306cb944baa11e9f29d6ae8,
         type: 3}
@@ -57924,15 +60465,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908890c45306cb944baa11e9f29d6ae8, type: 3}
---- !u!114 &640146021087944785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2283243257413190202, guid: 908890c45306cb944baa11e9f29d6ae8,
-    type: 3}
-  m_PrefabInstance: {fileID: 640146021087944784}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

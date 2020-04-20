@@ -9,30 +9,18 @@ public class OxygenSystemInteraction : ToggleInteraction
 {
     public GameObject target;
     public TMP_Text ActiveStatusText;
-    public GameObject ScreenObject;
 
     private bool oxygenEnabled = false;
 
-    public string activatedEvent = "";
+
+    public string activatedEvent = "event:/OxygenActivated";
     FMOD.Studio.EventInstance activatedSound;
 
-    public string deActivationEvent = "";
+    public string deActivationEvent = "event:/OxygenDeactivated";
     FMOD.Studio.EventInstance deActivationSound;
 
     private string inactive = "INACTIVE";
     private string active = "ACTIVE";
-
-    private bool isCurrentlyPowered = true;
-
-    private void Update()
-    {
-        if (GameManager.Instance.IsPowerActive != this.isCurrentlyPowered)
-        {
-            this.isCurrentlyPowered = GameManager.Instance.IsPowerActive;
-            this.ScreenObject.SetActive(this.isCurrentlyPowered);
-            this.canInteract = this.isCurrentlyPowered;
-        }
-    }
 
     private void Start()
     {
@@ -47,11 +35,14 @@ public class OxygenSystemInteraction : ToggleInteraction
 
         this.oxygenEnabled = !this.oxygenEnabled;
 
-        if (this.oxygenEnabled){        
+        if (this.oxygenEnabled)
+        {
+            deActivationSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             activatedSound.start();
         }
         else {
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/OxygenDeactivated");
+            activatedSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            deActivationSound.start();
         }
 
         this.ActiveStatusText.text = this.oxygenEnabled ? this.active : this.inactive;

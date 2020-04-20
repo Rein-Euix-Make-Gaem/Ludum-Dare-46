@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5399807638587697323}
   - component: {fileID: 4913057872433168920}
   - component: {fileID: 5399807638587697324}
+  - component: {fileID: 7070338865345625678}
   m_Layer: 0
   m_Name: IncidentManager
   m_TagString: Untagged
@@ -152,3 +153,17 @@ MonoBehaviour:
   minSpawnInterval: 30
   spawnChance: 0.01
   spawnInterval: 5
+--- !u!114 &7070338865345625678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5399807638587697316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc02710b7f336e48a430661b25b8d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulsesPerSecond: 1.5
+  color: {r: 1, g: 0, b: 0, a: 1}
