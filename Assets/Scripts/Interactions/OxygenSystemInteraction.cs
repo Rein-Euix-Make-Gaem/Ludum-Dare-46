@@ -6,6 +6,7 @@ using UnityEngine;
 public class OxygenSystemInteraction : ToggleInteraction
 {
     public TMP_Text ActiveStatusText;
+    public GameObject ScreenObject;
 
     private bool oxygenEnabled = false;
 
@@ -16,8 +17,19 @@ public class OxygenSystemInteraction : ToggleInteraction
     public string deActivationEvent = "event:/OxygenDeactivated";
     FMOD.Studio.EventInstance deActivationSound;
 
+    private bool isCurrentlyPowered = true;
     private string inactive = "INACTIVE";
     private string active = "ACTIVE";
+
+    private void Update()
+    {
+        if (GameManager.Instance.IsPowerActive != this.isCurrentlyPowered)
+        {
+            this.isCurrentlyPowered = GameManager.Instance.IsPowerActive;
+            this.ScreenObject.SetActive(this.isCurrentlyPowered);
+            this.canInteract = this.isCurrentlyPowered;
+        }
+    }
 
     protected override void OnStart()
     {

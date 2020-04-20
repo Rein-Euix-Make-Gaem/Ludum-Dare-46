@@ -10,8 +10,11 @@
         public string activatedEvent = "event:/ShieldsActivated";
         public string deActivationEvent = "event:/ShieldsDeactivated";
 
-        FMOD.Studio.EventInstance activatedSound;
-        FMOD.Studio.EventInstance deActivationSound;
+        private string inactive = "INACTIVE";
+        private string active = "ACTIVE";
+        private bool isCurrentlyPowered = true;
+        private FMOD.Studio.EventInstance activatedSound;
+        private FMOD.Studio.EventInstance deActivationSound;
 
         protected override void OnStart()
         {
@@ -23,33 +26,19 @@
             // HACK: adjust sounds since the sound guy is busy
             activatedSound.setVolume(0.20f);
             deActivationSound.setVolume(0.20f);
+
+            this.ActiveStatusText.text = this.inactive;
         }
-        public string activatedEvent = "";
-        FMOD.Studio.EventInstance activatedSound;
 
-        public string deActivationEvent = "";
-        FMOD.Studio.EventInstance deActivationSound;
-
-        private string inactive = "INACTIVE";
-        private string active = "ACTIVE";
-
-        private bool isCurrentlyPowered = true;
 
         private void Update()
         {
-            if(GameManager.Instance.IsPowerActive != this.isCurrentlyPowered)
+            if (GameManager.Instance.IsPowerActive != this.isCurrentlyPowered)
             {
                 this.isCurrentlyPowered = GameManager.Instance.IsPowerActive;
                 this.ScreenObject.SetActive(this.isCurrentlyPowered);
                 this.canInteract = this.isCurrentlyPowered;
             }
-        }
-
-        private void Start()
-        {
-            this.ActiveStatusText.text = this.inactive;
-            activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);
-            deActivationSound = FMODUnity.RuntimeManager.CreateInstance(deActivationEvent);
         }
 
         protected override void OnInteract(ref InteractionEvent ev)
@@ -61,13 +50,13 @@
 
             if (shieldState)
             {
-                ActiveStatusText.text = "ACTIVE";
+                ActiveStatusText.text = this.active;
                 deActivationSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 activatedSound.start();
             }
             else
             {
-                ActiveStatusText.text = "INACTIVE";
+                ActiveStatusText.text = this.inactive;
                 activatedSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 deActivationSound.start();
             }
