@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool IsCarryingPatch;
     public GameObject CarriedLargePatch;
 
+    private bool jump = false;
     private float speed;
     private Vector3 direction;
     private bool grounded;
@@ -46,9 +47,14 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
 
+        if (grounded && Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
+
         //if (GameManager.Instance.IsFirstPersonControllerEnabled)
         //{
-            speed = Input.GetKey(KeyCode.LeftShift) && !this.IsCarryingPatch ? runSpeed : walkSpeed;
+        speed = Input.GetKey(KeyCode.LeftShift) && !this.IsCarryingPatch ? runSpeed : walkSpeed;
 
             var x = Input.GetAxisRaw("Horizontal");
             var z = Input.GetAxisRaw("Vertical");
@@ -86,22 +92,18 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (!grounded)
+        if (jump)
         {
-            return;
-        }
+            jump = false;
+            jumpSound.start();
 
-        if (Input.GetButton("Jump"))
-        {
             var jumpSpeed = CalculateJumpSpeed();
             var jumpVelocity = new Vector3(body.velocity.x, jumpSpeed, body.velocity.z);
 
             body.velocity = jumpVelocity;
-
-            jumpSound.start();
         }
     }
-    
+
     private float CalculateJumpSpeed()
     {
         return Mathf.Sqrt(2 * jumpHeight * gravity);
