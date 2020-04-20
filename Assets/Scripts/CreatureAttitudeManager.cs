@@ -17,8 +17,8 @@ public class CreatureAttitudeManager : MonoBehaviour
     public float FastCalmingModifier;
     public float FastFreakingModifier;
 
-    [SerializeField]
-    private bool HasDistractions;
+    public bool HasDistractions;
+
     [SerializeField]
     private bool IsPlayerPresent;
     private Material dynamicCreatureMaterial;

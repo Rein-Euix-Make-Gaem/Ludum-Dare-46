@@ -1,4 +1,5 @@
 ﻿using Doozy.Engine.UI;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -206,18 +207,13 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void FixedUpdate()
     {
-        if (this.isProducingOxygen)
+        if (this.isProducingOxygen && this.IsPowerActive)
         {
             this.CurrentOxygen += this.BaseOxygenProductionRate;
         }
 
         this.CurrentOxygen -= this.TotalOxygenReductionRate;
-
-        this.CurrentOxygen = (this.CurrentOxygen < 0)
-            ? 0
-            : (this.CurrentOxygen > 100)
-                ? 100
-                : this.CurrentOxygen;
+        this.CurrentOxygen = Mathf.Clamp(this.CurrentOxygen, 0, 100);
 
         if(this.CurrentOxygen <= 0 && this.ElapsedSuffocationTime < this.SuffocationTime)
         {
