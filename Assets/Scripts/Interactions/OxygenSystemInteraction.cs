@@ -39,7 +39,7 @@ public class OxygenSystemInteraction : ToggleInteraction
             activatedSound.start();
         }
         else {
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/OxygenDeactivated");
+            deActivationSound.start();
         }
 
         this.ActiveStatusText.text = this.oxygenEnabled ? this.active : this.inactive;

@@ -35,10 +35,15 @@ public class GameManager : SingletonBehaviour<GameManager>
     public float SuffocationTime;
     public float ElapsedSuffocationTime;
 
+    public float TimeToWin;
+    public float TimeRemaining;
+
     private float maxOxygen = 100f;
     private float TotalOxygenReductionRate;
     private bool isProducingOxygen;
     private bool alreadySuffocated;
+    private bool isPlaying;
+    private float startTime;
 
     // Start is called before the first frame update
 
@@ -57,6 +62,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         this.isProducingOxygen = false;
         this.CurrentOxygen = this.maxOxygen;
         this.alreadySuffocated = false;
+        this.isPlaying = false;
 
         if (this.SkipTitle && SceneManager.GetActiveScene().name != this.MainGame)
         {
@@ -79,11 +85,13 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void LoseGame()
     {
+        this.isPlaying = false;
         this.LoseScreen.gameObject.SetActive(true);
     }
 
     public void WinGame()
     {
+        this.isPlaying = false;
         // this.WinScreen.enabled = true;
     }
 
@@ -121,6 +129,9 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void ResetGameState()
     {
+        this.startTime = Time.time;
+        this.isPlaying = true;
+        this.TimeRemaining = this.TimeToWin;
         this.CurrentOxygen = this.maxOxygen;
         this.TotalOxygenReductionRate = 0;
         this.alreadySuffocated = false;
@@ -129,7 +140,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         this.IsShieldActive = false;
         this.IsPowerActive = true;
         this.IsAsteroidFieldActive = false;
-}
+    }
 
     public void SetOxygenProduction(bool enableProduction)
     {
@@ -220,6 +231,11 @@ public class GameManager : SingletonBehaviour<GameManager>
         else if(this.CurrentOxygen > 0 && this.ElapsedSuffocationTime > 0)
         {
             this.ElapsedSuffocationTime = 0;
+        }
+
+        if (this.isPlaying)
+        {
+            this.TimeRemaining = this.TimeRemaining - (Time.time - this.startTime);
         }
     }
 }
