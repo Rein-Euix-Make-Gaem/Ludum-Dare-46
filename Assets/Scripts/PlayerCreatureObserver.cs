@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Doozy.Engine.Progress;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerCreatureObserver : MonoBehaviour
 {
     public CreatureAttitudeManager CreatureAttitudeManager;
-    public Slider UpsetValueSlider;
+    public Progressor UpsetProgressor;
 
     // Update is called once per frame
     void Update()
@@ -14,15 +15,6 @@ public class PlayerCreatureObserver : MonoBehaviour
             return;
         }
 
-        this.UpsetValueSlider.value = this.CreatureAttitudeManager.CurrentUpsetValue;
-        
-        if(this.CreatureAttitudeManager.CurrentUpsetValue <= 0)
-        {
-            this.UpsetValueSlider.gameObject.SetActive(false);
-        }
-        else
-        {
-            this.UpsetValueSlider.gameObject.SetActive(true);
-        }
+        this.UpsetProgressor.SetValue(this.CreatureAttitudeManager.CurrentUpsetValue);
     }
 }
