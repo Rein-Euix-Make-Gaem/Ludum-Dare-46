@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0.5f;
 
 
-    public string JumpEvent = "";
+    public string JumpEvent = "event:/Jump";
     FMOD.Studio.EventInstance jumpSound;
 
     public bool IsCarryingPatch;
