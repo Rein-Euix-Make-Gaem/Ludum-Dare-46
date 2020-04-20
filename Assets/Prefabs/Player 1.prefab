@@ -35,7 +35,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6523848560453216489}
-  - {fileID: 3886491455717877527}
   - {fileID: 3576669069784715181}
   m_Father: {fileID: 1102026363743079233}
   m_RootOrder: 2
@@ -787,6 +786,8 @@ MonoBehaviour:
   responseTime: 25
   inheritIntesity: 1
   on: 0
+  pulse: 0
+  pulsesPerSecond: 0
 --- !u!1 &2421916557060282861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,9 +1060,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3886491455717877527}
   - {fileID: 8100551605517404506}
   m_Father: {fileID: 1102026363351513798}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4819080915360681782
 Camera:
@@ -2212,7 +2214,7 @@ Transform:
   - {fileID: 8015541461525843757}
   - {fileID: 8100551604979111706}
   m_Father: {fileID: 3576669069784715181}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 21.085001, y: -27.6, z: 6.42}
 --- !u!1 &8100551605659877365
 GameObject:
@@ -4223,7 +4225,7 @@ GameObject:
   - component: {fileID: 3886491455717877527}
   - component: {fileID: 6642225813271534700}
   - component: {fileID: 3199538428198100667}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlackingOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4237,12 +4239,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8661154934974989330}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.562}
   m_LocalScale: {x: 0.13, y: 1, z: 0.07}
   m_Children: []
-  m_Father: {fileID: 1102026363351513798}
-  m_RootOrder: 1
+  m_Father: {fileID: 3576669069784715181}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &6642225813271534700
 MeshFilter:
