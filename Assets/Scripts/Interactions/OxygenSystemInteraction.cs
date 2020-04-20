@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class OxygenSystemInteraction : ToggleInteraction
 {
-    public GameObject target;
     public TMP_Text ActiveStatusText;
 
     private bool oxygenEnabled = false;
@@ -22,6 +21,7 @@ public class OxygenSystemInteraction : ToggleInteraction
 
     protected override void OnStart()
     {
+        base.OnStart();
 
         this.ActiveStatusText.text = this.inactive;
         activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);

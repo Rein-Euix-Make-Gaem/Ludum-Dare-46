@@ -22,6 +22,7 @@ public class LightPuzzle : MonoBehaviour
 
         toggleSound = FMODUnity.RuntimeManager.CreateInstance(toggleEvent);
         solveSound = FMODUnity.RuntimeManager.CreateInstance(solveEvent);
+        solveSound.setVolume(0.4f);
     }
 
     private void Start()
@@ -59,8 +60,6 @@ public class LightPuzzle : MonoBehaviour
         {
             if (!state[i]) return false;
         }
-
-        solveSound.start();
 
         return true;
     }
@@ -141,6 +140,7 @@ public class LightPuzzle : MonoBehaviour
 
         if (Synchronize())
         {
+            solveSound.start();
             GameManager.Instance.SetPowerActive(true);
         }
     }

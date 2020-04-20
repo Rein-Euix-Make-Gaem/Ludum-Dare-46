@@ -392,11 +392,13 @@ MonoBehaviour:
   cooldown: 1
   proxies: []
   holdTime: 0
-  objectName: 
-  activeTemplate: 
-  inactiveTemplate: 
+  objectName: Shields
+  activeTemplate: Activate Shields
+  inactiveTemplate: Deactivate Shields
   toggled: 0
   ActiveStatusText: {fileID: 2283243257413190202}
+  activatedEvent: event:/ShieldsActivated
+  deActivationEvent: event:/ShieldsDeactivated
 --- !u!1 &2934567349221514781
 GameObject:
   m_ObjectHideFlags: 0
