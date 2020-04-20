@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -48025,6 +48025,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1779435070}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1784181811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102026363743079234, guid: 0a9742c9186d2cc43b2591fb12386032,
+    type: 3}
+  m_PrefabInstance: {fileID: 236699421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784181812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784181811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb1ced5f86cb4d68a267c1a9d486fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSound: event:/Step
+  walkingspeed: 0.5
 --- !u!1001 &1788357159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54752,6 +54772,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: activeTemplate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: inactiveTemplate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: deActivationEvent
+      value: event:/OxygenDeactivated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: activatedEvent
+      value: event:/OxygenActivated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349943486461543278, guid: 1f11c2640c4889d4c90bda7abc48aadc,
+        type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7203632692296885346, guid: 1f11c2640c4889d4c90bda7abc48aadc,
         type: 3}
       propertyPath: m_Name
