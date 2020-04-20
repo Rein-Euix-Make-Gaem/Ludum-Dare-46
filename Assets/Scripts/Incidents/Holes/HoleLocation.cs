@@ -12,6 +12,11 @@ public class HoleLocation : MonoBehaviour
     public GameObject SmallPatchObject;
 
     private HoleSize LatestHoleSize;
+
+
+    public string hitEvent = "event:/AsteroidHit";
+    FMOD.Studio.EventInstance hitSound;
+
     private enum HoleSize
     {
         None,
@@ -28,6 +33,8 @@ public class HoleLocation : MonoBehaviour
         this.LargeHoleObject.gameObject.SetActive(false);
         this.CardboardPatchObject.SetActive(false);
         this.SmallPatchObject.SetActive(false);
+
+        hitSound = FMODUnity.RuntimeManager.CreateInstance(hitEvent);
     }
 
     // Update is called once per frame
@@ -57,6 +64,7 @@ public class HoleLocation : MonoBehaviour
     public void CreateSmallHole()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().SmallShake();
+        hitSound.start();
 
         this.IsActive = true;
 
@@ -73,6 +81,7 @@ public class HoleLocation : MonoBehaviour
     public void CreateLargeHole()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().BigShake();
+        hitSound.start();
 
         this.IsActive = true;
 

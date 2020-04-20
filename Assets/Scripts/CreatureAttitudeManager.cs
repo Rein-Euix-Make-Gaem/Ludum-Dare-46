@@ -20,12 +20,17 @@ public class CreatureAttitudeManager : MonoBehaviour
     [SerializeField]
     private bool IsPlayerPresent;
 
+    public string worriedEvent = "event:/Worried";
+    FMOD.Studio.EventInstance worriedSound;
+
     // Start is called before the first frame update
     void Start()
     {
         this.CurrentUpsetValue = 0;
         this.HasDistractions = true;
         this.IsPlayerPresent = false;
+
+        worriedSound = FMODUnity.RuntimeManager.CreateInstance(worriedEvent);
     }
 
     // Update is called once per frame
@@ -67,6 +72,8 @@ public class CreatureAttitudeManager : MonoBehaviour
     // Updates 50 times per second
     private void FixedUpdate()
     {
+        float start = this.CurrentUpsetValue;
+
         if(this.IsPlayerPresent && this.HasDistractions)
         {
             this.CurrentUpsetValue -= this.BaseCalmingRate * this.FastCalmingModifier;
@@ -89,6 +96,11 @@ public class CreatureAttitudeManager : MonoBehaviour
             : (this.CurrentUpsetValue > 100) 
                 ? 100 
                 : this.CurrentUpsetValue;
+
+        if (start <= 66 && this.CurrentUpsetValue > 66){
+            worriedSound.start();
+        }
+
 
         CreatureMaterial.color = new Color(CurrentUpsetValue / 20f, CreatureMaterial.color.g, CreatureMaterial.color.b);
     }
