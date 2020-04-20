@@ -13,13 +13,17 @@ public class PlayerController : MonoBehaviour
     public string jumpEvent = "event:/Jump";
     public bool IsCarryingPatch;
     public GameObject CarriedLargePatch;
-
+    public float groundDetectionRadius = 0.5f;
+    public Vector3[] groundingTaps;
+    
     private FMOD.Studio.EventInstance jumpSound;
     private bool jump;
     private float speed;
     private Vector3 direction;
-    private bool grounded;
     private Rigidbody body;
+
+    [SerializeField]
+    private bool grounded;
 
     private void Start()
     {
@@ -106,13 +110,24 @@ public class PlayerController : MonoBehaviour
 
     private void CheckGround()
     {
-        Debug.DrawRay(transform.position, Vector3.down * groundDistance, Color.blue);
-
         var wasGrounded = grounded;
+        var count = groundingTaps.Length;
 
-        grounded = Physics.SphereCast(
-            new Ray(transform.position, Vector3.down), 0.5f, groundDistance);
+        for (var i = 0; i < count; i++)
+        {
+            var tap = groundingTaps[i];
+            var checkPosition = transform.position + tap;
 
+            Debug.DrawRay(checkPosition, Vector3.down * groundDistance, Color.red);
+
+            grounded = Physics.Raycast(new Ray(checkPosition, Vector3.down), groundDistance);
+            
+            if (grounded)
+            {
+                break;
+            }
+        }
+       
         if (!wasGrounded && grounded)
         {
             jumpSound.start();

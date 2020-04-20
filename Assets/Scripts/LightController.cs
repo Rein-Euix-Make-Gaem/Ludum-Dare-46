@@ -9,6 +9,8 @@ public class LightController : MonoBehaviour
     public float responseTime = 25;
     public bool inheritIntesity = true;
     public bool on = true;
+    public bool pulse = false;
+    public float pulsesPerSecond = 0f;
 
     private Light attachedLight;
     private MeshRenderer bulbRenderer;
@@ -26,7 +28,12 @@ public class LightController : MonoBehaviour
             bulbRenderer.material = bulbMaterial;
         }
 
-        attachedLight = GetComponent<Light>() ?? GetComponentInChildren<Light>();
+        attachedLight = gameObject.GetComponent<Light>();
+
+        if (attachedLight == null)
+        {
+            attachedLight = GetComponentInChildren<Light>(true);
+        }
 
         if (attachedLight != null && inheritIntesity)
         {
@@ -37,6 +44,14 @@ public class LightController : MonoBehaviour
     public void Update()
     {
         var targetIntensity = on ? intensity : 0f;
+
+        if (pulse)
+        {
+            var frequency = 1f / pulsesPerSecond;
+            var angle = 2f * Mathf.PI;
+            var alpha = (1f + Mathf.Sin(frequency * angle * Time.time)) * 0.5f;
+            currentIntensity *= alpha;
+        }
 
         currentColor = bulbColor;
         currentIntensity = Mathf.Lerp(currentIntensity, targetIntensity, Time.deltaTime * responseTime);
