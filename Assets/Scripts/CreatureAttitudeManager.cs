@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Extensions;
+using System.Collections;
 using UnityEngine;
 
 public class CreatureAttitudeManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     public Material CreatureMaterial;
     public ParticleSystem CreatureExplosion;
     public GameObject TVScreen;
+    public string worriedEvent = "event:/Worried";
 
     public float CurrentUpsetValue;
 
@@ -21,8 +23,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     private bool IsPlayerPresent;
     private Material dynamicCreatureMaterial;
 
-    public string worriedEvent = "event:/Worried";
-    FMOD.Studio.EventInstance worriedSound;
+    private FMOD.Studio.EventInstance worriedSound;
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +32,16 @@ public class CreatureAttitudeManager : MonoBehaviour
         this.HasDistractions = true;
         this.IsPlayerPresent = false;
 
-        worriedSound = FMODUnity.RuntimeManager.CreateInstance(worriedEvent);
         dynamicCreatureMaterial = new Material(CreatureMaterial);
+
+        worriedSound = FMODUnity.RuntimeManager.CreateInstance(worriedEvent);
+        worriedSound.set3DAttributes(CreatureObject.transform.ToFModAttributes());
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(this.CurrentUpsetValue >= 100 
             && !GameManager.Instance.NeverLose
             && GameManager.Instance.IsFirstPersonControllerEnabled)
