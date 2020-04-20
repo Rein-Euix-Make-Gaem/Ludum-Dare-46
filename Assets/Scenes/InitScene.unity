@@ -191,12 +191,12 @@ PrefabInstance:
     - target: {fileID: 1922861121477936935, guid: 767457839ab8f504eacf52d1cb2f1a40,
         type: 3}
       propertyPath: NeverLose
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1922861121477936935, guid: 767457839ab8f504eacf52d1cb2f1a40,
         type: 3}
       propertyPath: SkipTitle
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1922861121477936935, guid: 767457839ab8f504eacf52d1cb2f1a40,
         type: 3}

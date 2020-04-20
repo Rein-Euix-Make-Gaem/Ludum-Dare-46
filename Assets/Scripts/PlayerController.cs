@@ -10,15 +10,12 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1f;
     public float maxVelocity = 6f;
     public float groundDistance = 0.5f;
-
-
-    public string JumpEvent = "event:/Jump";
-    FMOD.Studio.EventInstance jumpSound;
-
+    public string jumpEvent = "event:/Jump";
     public bool IsCarryingPatch;
     public GameObject CarriedLargePatch;
 
-    private bool jump = false;
+    private FMOD.Studio.EventInstance jumpSound;
+    private bool jump;
     private float speed;
     private Vector3 direction;
     private bool grounded;
@@ -34,7 +31,7 @@ public class PlayerController : MonoBehaviour
         this.IsCarryingPatch = false;
         this.CarriedLargePatch.SetActive(false);
 
-        jumpSound = FMODUnity.RuntimeManager.CreateInstance(JumpEvent);
+        jumpSound = FMODUnity.RuntimeManager.CreateInstance(jumpEvent);
     }
 
     private void FixedUpdate()
@@ -94,13 +91,11 @@ public class PlayerController : MonoBehaviour
     {
         if (jump)
         {
-            jump = false;
-            jumpSound.start();
-
             var jumpSpeed = CalculateJumpSpeed();
             var jumpVelocity = new Vector3(body.velocity.x, jumpSpeed, body.velocity.z);
 
             body.velocity = jumpVelocity;
+            jump = false;
         }
     }
 
@@ -113,8 +108,17 @@ public class PlayerController : MonoBehaviour
     {
         Debug.DrawRay(transform.position, Vector3.down * groundDistance, Color.blue);
 
+        var wasGrounded = grounded;
+
         grounded = Physics.SphereCast(
             new Ray(transform.position, Vector3.down), 0.5f, groundDistance);
+
+        if (!wasGrounded && grounded)
+        {
+            jumpSound.start();
+            // HACK: avoids delay in jump sound
+            jumpSound.setTimelinePosition(230);
+        }
     }
 
     public void PickupLargePatch()

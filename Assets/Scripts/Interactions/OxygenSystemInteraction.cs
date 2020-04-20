@@ -1,7 +1,5 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Interactions;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -22,8 +20,9 @@ public class OxygenSystemInteraction : ToggleInteraction
     private string inactive = "INACTIVE";
     private string active = "ACTIVE";
 
-    private void Start()
+    protected override void OnStart()
     {
+
         this.ActiveStatusText.text = this.inactive;
         activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);
         deActivationSound = FMODUnity.RuntimeManager.CreateInstance(deActivationEvent);
