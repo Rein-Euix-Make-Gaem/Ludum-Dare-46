@@ -4,25 +4,26 @@ namespace Assets.Scripts.Interactions
 {
     public class DoorInteraction : ToggleInteraction
     {
-        public GameObject door;
-        public float targetHeight = 2.25f;
+        public DoorController door;
 
-        private Vector3 basePosition;
-
-        public override string description => "toggle door";
-
-        private void Start()
+        public DoorInteraction()
         {
-            basePosition = door.transform.position;
+            cooldown = 1f;
+            objectName = "Door";
+            activeTemplate = "Open Door";
+            inactiveTemplate = "Close Door";
         }
 
-        void Update()
-        {
-            var height = toggled ? targetHeight : 0;
-            var offset = new Vector3(0, height, 0);
+        //public override bool CanInteract(PlayerController player)
+        //{
+        //    return true; //  !door.IsTransitioning;
+        //}
 
-            door.transform.position = Vector3.Lerp(
-                door.transform.position, basePosition + offset, Time.deltaTime * 2);
+        protected override void OnInteract(ref InteractionEvent ev)
+        {
+            base.OnInteract(ref ev);
+
+            door.Toggle(!door.open);
         }
     }
 }

@@ -28,7 +28,7 @@ public class InteractableDetector : MonoBehaviour
 
         interactionText.text = string.Empty;
 
-        if (Physics.SphereCast(transform.position, 0.5f, transform.forward, out var hitInfo, interactionDistance, interactableMask.value))
+        if (Physics.Raycast(transform.position, transform.forward, out var hitInfo, interactionDistance))
         {
             var interactable = hitInfo.collider.gameObject.GetComponent<Interactable>();
 
