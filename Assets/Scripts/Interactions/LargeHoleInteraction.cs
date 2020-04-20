@@ -11,6 +11,9 @@ public class LargeHoleInteraction : ToggleInteraction
 
     private PlayerController playerController;
 
+    public string patchEvent = "event:/Patch Hole";
+    FMOD.Studio.EventInstance patchSound;
+
     protected override void OnInteract(ref InteractionEvent ev)
     {
         base.OnInteract(ref ev);
@@ -22,6 +25,9 @@ public class LargeHoleInteraction : ToggleInteraction
             GameManager.Instance.RemoveLargeOxygenLoss();
             this.target.SetActive(false);
         }
+
+        patchSound.start();
+
     }
 
     public override bool CanInteract(PlayerController player)
@@ -33,5 +39,6 @@ public class LargeHoleInteraction : ToggleInteraction
     public void Initialize()
     {
         this.airParticles.Play();
+        patchSound = FMODUnity.RuntimeManager.CreateInstance(patchEvent);
     }
 }
