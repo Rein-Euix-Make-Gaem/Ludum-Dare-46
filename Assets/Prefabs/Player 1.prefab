@@ -70,7 +70,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 1335
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   maxVelocity: 10
   groundDistance: 1
   jumpEvent: event:/Jump
+  stepEvent: event:/Step
   IsCarryingPatch: 0
   CarriedLargePatch: {fileID: 3407377844212534890}
   groundDetectionRadius: 0.5
