@@ -11,16 +11,19 @@ public class PlayerController : MonoBehaviour
     public float maxVelocity = 6f;
     public float groundDistance = 0.5f;
     public string jumpEvent = "event:/Jump";
+    public string stepEvent = "event:/Step";
     public bool IsCarryingPatch;
     public GameObject CarriedLargePatch;
     public float groundDetectionRadius = 0.5f;
     public Vector3[] groundingTaps;
     
     private FMOD.Studio.EventInstance jumpSound;
+    private FMOD.Studio.EventInstance stepSound;
     private bool jump;
     private float speed;
     private Vector3 direction;
     private Rigidbody body;
+    private float stepTimer;
 
     [SerializeField]
     private bool grounded;
@@ -36,12 +39,36 @@ public class PlayerController : MonoBehaviour
         this.CarriedLargePatch.SetActive(false);
 
         jumpSound = FMODUnity.RuntimeManager.CreateInstance(jumpEvent);
+        stepSound = FMODUnity.RuntimeManager.CreateInstance(stepEvent);
     }
 
     private void FixedUpdate()
     {
         Move();
         Jump();
+    }
+
+    private void Footsteps()
+    {
+        var moving = direction.sqrMagnitude >= (0.001 * 0.001);
+
+        if (moving)
+        {
+            stepTimer += Time.deltaTime;
+
+            var strideDuration = 1f / speed;
+            var stepsPerStride = 3;
+
+            if (stepTimer >= strideDuration * stepsPerStride)
+            {
+                stepTimer = 0f;
+                FMODUnity.RuntimeManager.PlayOneShot(stepEvent);
+            }
+        }
+        else
+        {
+            stepTimer = 0f;
+        }
     }
 
     private void Update()
@@ -53,20 +80,15 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
-        //if (GameManager.Instance.IsFirstPersonControllerEnabled)
-        //{
         speed = Input.GetKey(KeyCode.LeftShift) && !this.IsCarryingPatch ? runSpeed : walkSpeed;
 
-            var x = Input.GetAxisRaw("Horizontal");
-            var z = Input.GetAxisRaw("Vertical");
+        var x = Input.GetAxisRaw("Horizontal");
+        var z = Input.GetAxisRaw("Vertical");
 
-            direction = new Vector3(x, 0, z);
-            direction = Vector3.Normalize(direction);
-        //}
-        //else
-        //{
-        //    speed = 0;
-        //}
+        direction = new Vector3(x, 0, z);
+        direction = Vector3.Normalize(direction);
+
+        Footsteps();
     }
 
     private void Move()
@@ -132,7 +154,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpSound.start();
             // HACK: avoids delay in jump sound
-            jumpSound.setTimelinePosition(230);
+            jumpSound.setTimelinePosition(260);
         }
     }
 

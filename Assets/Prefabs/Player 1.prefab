@@ -1040,7 +1040,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3576669069784715181}
   - component: {fileID: 4819080915360681782}
-  - component: {fileID: 8176498639169876949}
   - component: {fileID: 7640641068504256270}
   m_Layer: 0
   m_Name: TabletCamera
@@ -1108,14 +1107,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8176498639169876949
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3258639366281525927}
-  m_Enabled: 1
 --- !u!114 &7640641068504256270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,7 +1469,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 1102026363351513799}
+  m_Camera: {fileID: 4819080915360681782}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
