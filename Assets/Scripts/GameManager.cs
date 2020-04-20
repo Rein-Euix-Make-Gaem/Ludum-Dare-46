@@ -129,7 +129,9 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void ResetGameState()
     {
-        this.startTime = Time.time;
+        this.MajorHoles = 0;
+        this.MinorHoles = 0;
+        this.startTime = Time.fixedTime;
         this.isPlaying = true;
         this.TimeRemaining = this.TimeToWin;
         this.CurrentOxygen = this.maxOxygen;
@@ -235,7 +237,12 @@ public class GameManager : SingletonBehaviour<GameManager>
 
         if (this.isPlaying)
         {
-            this.TimeRemaining = this.TimeRemaining - (Time.time - this.startTime);
+            this.TimeRemaining = this.TimeToWin - (Time.fixedTime - this.startTime);
+
+            if(this.TimeRemaining <= 0)
+            {
+                this.WinGame();
+            }
         }
     }
 }
