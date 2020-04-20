@@ -1,18 +1,16 @@
-﻿using Assets.Scripts;
+﻿using Assets.Extensions;
+using Assets.Scripts;
 using Assets.Scripts.Interactions;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LargeHoleInteraction : ToggleInteraction
 {
     public GameObject target;
     public ParticleSystem airParticles;
+    public string patchEvent = "event:/Patch Hole";
 
     private PlayerController playerController;
-
-    public string patchEvent = "event:/Patch Hole";
-    FMOD.Studio.EventInstance patchSound;
+    private FMOD.Studio.EventInstance patchSound;
 
     protected override void OnInteract(ref InteractionEvent ev)
     {
@@ -20,14 +18,14 @@ public class LargeHoleInteraction : ToggleInteraction
 
         if (this.target != null)
         {
+            patchSound.set3DAttributes(target.transform.ToFModAttributes());
+            patchSound.start();
+
             this.playerController.DropLargePatch();
             this.airParticles.Stop();
             GameManager.Instance.RemoveLargeOxygenLoss();
             this.target.SetActive(false);
         }
-
-        patchSound.start();
-
     }
 
     public override bool CanInteract(PlayerController player)

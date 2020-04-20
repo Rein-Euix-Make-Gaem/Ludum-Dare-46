@@ -18,10 +18,20 @@ public class AlarmLightSync : MonoBehaviour
 
     private void Update()
     {
-        var alarmActive = GameManager.Instance.IsAlarmActive;
-        var alarmColor = alarmActive ? GameManager.Instance.AlarmColor : defaultColor;
+        var hasPower = GameManager.Instance.IsPowerActive;
 
-        lightController.intensity = alarmActive ? alarmIntensity : defaultIntensity;
-        lightController.bulbColor = alarmColor;
+        if (!hasPower)
+        {
+            lightController.intensity = 0;
+        }
+        else
+        {
+            var alarmActive = GameManager.Instance.IsAlarmActive;
+            var alarmColor = alarmActive ? GameManager.Instance.AlarmColor : defaultColor;
+
+            lightController.intensity = alarmActive ? alarmIntensity : defaultIntensity;
+            lightController.bulbColor = alarmColor;
+        }
+
     }
 }

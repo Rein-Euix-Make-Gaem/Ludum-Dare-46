@@ -47,8 +47,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     // Start is called before the first frame update
 
-    public bool IsAlarmActive => 
-        IsAsteroidFieldActive || CurrentOxygen <= 25;
+    public bool IsAlarmActive => MajorHoles != 0 || MinorHoles != 0 || CurrentOxygen <= 25;
 
     void Start()
     {

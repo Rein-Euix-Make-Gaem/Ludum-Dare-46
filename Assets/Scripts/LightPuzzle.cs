@@ -6,15 +6,12 @@ public class LightPuzzle : MonoBehaviour
 {
     public LightPuzzleInteraction[] items;
     public LightInteraction successLight;
+    public string toggleEvent = "event:/LightBlip";
+    public string solveEvent = "event:/LightPuzzleWin";
 
     private bool[] state;
-
-    public string ToggleEvent = "";
-    FMOD.Studio.EventInstance toggleSound;
-
-    public string SolveEvent = "";
-    FMOD.Studio.EventInstance solveSound;
-
+    private FMOD.Studio.EventInstance toggleSound;
+    private FMOD.Studio.EventInstance solveSound;
 
     public void Spawn()
     {
@@ -22,8 +19,10 @@ public class LightPuzzle : MonoBehaviour
 
         Generate(state);
         Synchronize();
-        toggleSound = FMODUnity.RuntimeManager.CreateInstance(ToggleEvent);
-        solveSound = FMODUnity.RuntimeManager.CreateInstance(SolveEvent);
+
+        toggleSound = FMODUnity.RuntimeManager.CreateInstance(toggleEvent);
+        solveSound = FMODUnity.RuntimeManager.CreateInstance(solveEvent);
+        solveSound.setVolume(0.4f);
     }
 
     private void Start()
@@ -61,8 +60,6 @@ public class LightPuzzle : MonoBehaviour
         {
             if (!state[i]) return false;
         }
-
-        solveSound.start();
 
         return true;
     }
@@ -143,6 +140,7 @@ public class LightPuzzle : MonoBehaviour
 
         if (Synchronize())
         {
+            solveSound.start();
             GameManager.Instance.SetPowerActive(true);
         }
     }

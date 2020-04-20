@@ -1,14 +1,12 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Interactions;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class OxygenSystemInteraction : ToggleInteraction
 {
-    public GameObject target;
     public TMP_Text ActiveStatusText;
+    public GameObject ScreenObject;
 
     private bool oxygenEnabled = false;
 
@@ -19,11 +17,24 @@ public class OxygenSystemInteraction : ToggleInteraction
     public string deActivationEvent = "event:/OxygenDeactivated";
     FMOD.Studio.EventInstance deActivationSound;
 
+    private bool isCurrentlyPowered = true;
     private string inactive = "INACTIVE";
     private string active = "ACTIVE";
 
-    private void Start()
+    private void Update()
     {
+        if (GameManager.Instance.IsPowerActive != this.isCurrentlyPowered)
+        {
+            this.isCurrentlyPowered = GameManager.Instance.IsPowerActive;
+            this.ScreenObject.SetActive(this.isCurrentlyPowered);
+            this.canInteract = this.isCurrentlyPowered;
+        }
+    }
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+
         this.ActiveStatusText.text = this.inactive;
         activatedSound = FMODUnity.RuntimeManager.CreateInstance(activatedEvent);
         deActivationSound = FMODUnity.RuntimeManager.CreateInstance(deActivationEvent);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Extensions;
+using System.Collections;
 using UnityEngine;
 
 public class CreatureAttitudeManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class CreatureAttitudeManager : MonoBehaviour
     public Material CreatureMaterial;
     public ParticleSystem CreatureExplosion;
     public GameObject TVScreen;
+    public string worriedEvent = "event:/Worried";
 
     public float CurrentUpsetValue;
 
@@ -19,9 +21,9 @@ public class CreatureAttitudeManager : MonoBehaviour
     private bool HasDistractions;
     [SerializeField]
     private bool IsPlayerPresent;
+    private Material dynamicCreatureMaterial;
 
-    public string worriedEvent = "event:/Worried";
-    FMOD.Studio.EventInstance worriedSound;
+    private FMOD.Studio.EventInstance worriedSound;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +32,16 @@ public class CreatureAttitudeManager : MonoBehaviour
         this.HasDistractions = true;
         this.IsPlayerPresent = false;
 
+        dynamicCreatureMaterial = new Material(CreatureMaterial);
+
         worriedSound = FMODUnity.RuntimeManager.CreateInstance(worriedEvent);
+        worriedSound.set3DAttributes(CreatureObject.transform.ToFModAttributes());
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(this.CurrentUpsetValue >= 100 
             && !GameManager.Instance.NeverLose
             && GameManager.Instance.IsFirstPersonControllerEnabled)
@@ -91,18 +97,13 @@ public class CreatureAttitudeManager : MonoBehaviour
             this.CurrentUpsetValue += this.BaseFreakingRate * this.FastFreakingModifier;
         }
 
-        this.CurrentUpsetValue = (this.CurrentUpsetValue < 0) 
-            ? 0 
-            : (this.CurrentUpsetValue > 100) 
-                ? 100 
-                : this.CurrentUpsetValue;
+        CurrentUpsetValue = Mathf.Clamp(CurrentUpsetValue, 0, 100);
 
         if (start <= 66 && this.CurrentUpsetValue > 66){
             worriedSound.start();
         }
 
-
-        CreatureMaterial.color = new Color(CurrentUpsetValue / 20f, CreatureMaterial.color.g, CreatureMaterial.color.b);
+        dynamicCreatureMaterial.color = new Color(CurrentUpsetValue / 20f, dynamicCreatureMaterial.color.g, dynamicCreatureMaterial.color.b);
     }
 
     private void OnTriggerEnter(Collider collider)

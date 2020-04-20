@@ -800,12 +800,14 @@ MonoBehaviour:
   cooldown: 1
   proxies: []
   holdTime: 0
-  objectName: 
-  activeTemplate: 
-  inactiveTemplate: 
+  objectName: Oxygen
+  activeTemplate: Activate Oxygen
+  inactiveTemplate: Deactivate Oxygen
   toggled: 0
-  target: {fileID: 3349943486461543279}
   ActiveStatusText: {fileID: 4533400075200784342}
+  ScreenObject: {fileID: 1161246393255662325}
+  activatedEvent: event:/OxygenActivated
+  deActivationEvent: event:/OxygenDeactivated
 --- !u!1 &3350214078038910645
 GameObject:
   m_ObjectHideFlags: 0
