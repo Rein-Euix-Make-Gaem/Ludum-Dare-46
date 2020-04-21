@@ -23,6 +23,12 @@ namespace Assets.Scripts
         private bool previousState;
         private bool triggering;
 
+        void Start()
+        {
+            previousState = !open;
+            triggering = false;
+        }
+
         public void Toggle(bool value)
         {
             open = value;
@@ -35,7 +41,7 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            if (IsCollidingWithPlayer(other))
+            if (!open && IsCollidingWithPlayer(other))
             {
                 open = !open;
             }
