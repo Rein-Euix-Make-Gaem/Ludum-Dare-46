@@ -8,6 +8,7 @@ public class LargeHoleInteraction : ToggleInteraction
     public GameObject target;
     public ParticleSystem airParticles;
     public string patchEvent = "event:/Patch Hole";
+    public AudioSource windSound;
 
     private PlayerController playerController;
     private FMOD.Studio.EventInstance patchSound;
@@ -18,6 +19,7 @@ public class LargeHoleInteraction : ToggleInteraction
 
         if (this.target != null)
         {
+            this.windSound.Stop();
             patchSound.set3DAttributes(target.transform.ToFModAttributes());
             patchSound.start();
 
@@ -37,6 +39,7 @@ public class LargeHoleInteraction : ToggleInteraction
     public void Initialize()
     {
         this.airParticles.Play();
+        this.windSound.Play(0);
         patchSound = FMODUnity.RuntimeManager.CreateInstance(patchEvent);
     }
 }
