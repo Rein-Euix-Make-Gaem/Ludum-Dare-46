@@ -188,11 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626a8d568c5e04a41a4de74e60ed57d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tvTarget: {fileID: 5603951199678815647}
-  cameraTarget: {fileID: 4005969823225149233}
-  turnSpeed: 1
-  tiltSpeed: 2
-  tiltModifier: 0.1
+  TVTarget: {fileID: 5603951199678815647}
+  CameraTarget: {fileID: 4005969823225149233}
+  speed: 1
 --- !u!114 &6817478728857749115
 MonoBehaviour:
   m_ObjectHideFlags: 0
