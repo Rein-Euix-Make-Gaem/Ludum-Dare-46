@@ -64,37 +64,43 @@ public class HoleLocation : MonoBehaviour
 
     public void CreateSmallHole()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().SmallShake();
+        if (!GameManager.Instance.IsShieldActive)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().SmallShake();
 
-        HitSound(SmallHoleObject.transform);
+            HitSound(SmallHoleObject.transform);
 
-        this.IsActive = true;
+            this.IsActive = true;
 
-        this.SmallPatchObject.SetActive(false);
-        this.CardboardPatchObject.SetActive(false);
-        this.LatestHoleSize = HoleSize.Small;
+            this.SmallPatchObject.SetActive(false);
+            this.CardboardPatchObject.SetActive(false);
+            this.LatestHoleSize = HoleSize.Small;
 
-        this.SmallHoleObject.gameObject.SetActive(true);
-        this.SmallHoleObject.Initialize();
+            this.SmallHoleObject.gameObject.SetActive(true);
+            this.SmallHoleObject.Initialize();
 
-        GameManager.Instance.AddSmallOxygenLoss();
+            GameManager.Instance.AddSmallOxygenLoss();
+        }
     }
 
     public void CreateLargeHole()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().BigShake();
+        if (!GameManager.Instance.IsShieldActive)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCamera>().BigShake();
 
-        HitSound(LargeHoleObject.transform);
+            HitSound(LargeHoleObject.transform);
 
-        this.IsActive = true;
+            this.IsActive = true;
 
-        this.SmallPatchObject.SetActive(false);
-        this.CardboardPatchObject.SetActive(false);
-        this.LatestHoleSize = HoleSize.Large;
+            this.SmallPatchObject.SetActive(false);
+            this.CardboardPatchObject.SetActive(false);
+            this.LatestHoleSize = HoleSize.Large;
 
-        this.LargeHoleObject.gameObject.SetActive(true);
-        this.LargeHoleObject.Initialize();
+            this.LargeHoleObject.gameObject.SetActive(true);
+            this.LargeHoleObject.Initialize();
 
-        GameManager.Instance.AddLargeOxygenLoss();
+            GameManager.Instance.AddLargeOxygenLoss();
+        }
     }
 }
