@@ -13,6 +13,8 @@ public class HoleLocation : MonoBehaviour
     private FMOD.Studio.EventInstance hitSound;
     private HoleSize LatestHoleSize;
 
+    public AudioSource explosionSound;
+
     private enum HoleSize
     {
         None,
@@ -60,6 +62,8 @@ public class HoleLocation : MonoBehaviour
     {
         hitSound.set3DAttributes(transform.ToFModAttributes());
         hitSound.start();
+
+        explosionSound.Play(0);
     }
 
     public void CreateSmallHole()
