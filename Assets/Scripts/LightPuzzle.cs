@@ -9,15 +9,29 @@ public class LightPuzzle : MonoBehaviour
     public string toggleEvent = "event:/LightBlip";
     public string solveEvent = "event:/LightPuzzleWin";
 
-    private bool[] state;
+    private int state;
     private FMOD.Studio.EventInstance toggleSound;
     private FMOD.Studio.EventInstance solveSound;
 
+    private const int WIN_STATE = 0b00011111;
+    private const int LIGHTS = 5;
+
+    private static readonly int[] solutions = new int[]
+    {
+        0b01101, 0b10110, 0b11100, 0b10001, 0b00100, 0b01010, 0b00111,
+        0b11011, 0b01110, 0b01001, 0b10010, 0b11000, 0b10101, 0b00011
+    };
+
+    private void Start()
+    {
+        state = WIN_STATE;
+        Synchronize();
+    }
     public void Spawn()
     {
         successLight.Toggle(false);
 
-        Generate(state);
+        Generate();
         Synchronize();
 
         toggleSound = FMODUnity.RuntimeManager.CreateInstance(toggleEvent);
@@ -25,118 +39,50 @@ public class LightPuzzle : MonoBehaviour
         solveSound.setVolume(0.4f);
     }
 
-    private void Start()
-    {
-        state = new bool[items.Length];
-
-        for (var i = 0; i < state.Length; i++)
-        {
-            state[i] = true;
-        }
-
-        Synchronize();
-    }
-
     private bool Synchronize()
     {
-        var won = IsWon(state);
+        var won = IsWon();
         var interactable = !won;
 
         successLight.Toggle(won);
 
         for (var i = 0; i < items.Length; i++)
         {
+            var value = (state >> i) & 1;
             items[i].puzzleLever.canInteract = interactable;
-            items[i].Toggle(state[i]);
+            items[i].Toggle(value != 0);
         }
 
         return won;
     }
 
 
-    private bool IsWon(bool[] state)
+    private bool IsWon()
     {
-        for (var i = 0; i < state.Length; i++)
-        {
-            if (!state[i]) return false;
-        }
-
-        return true;
+        return state == WIN_STATE;
     }
 
-    private bool Validate(bool[] state)
+    private void Toggle(int index)
     {
-        var copy = new bool[state.Length];
-        var iterations = 50;
+        state ^= (1 << index);
 
-        for (var i = 0; i < iterations; i++)
-        {
-            // reset the game state
-            Array.Copy(state, 0, copy, 0, state.Length);
-
-            // toggle random bits
-            for (var j = 0; j < copy.Length; j++)
-            {
-                var n = UnityEngine.Random.Range(0, copy.Length);
-                Toggle(copy, n);
-            }
-
-            // check for win condition
-            if (IsWon(copy))
-            {
-                return true;
-            }
-        }
-
-        // could not validate puzzle
-        return false;
-    }
-
-    private void Toggle(bool[] state, int index)
-    {
-        state[index] = !state[index];
-        
-        if (index - 1 >= 0) state[index - 1] = !state[index - 1];
-        if (index + 1 < state.Length) state[index + 1] = !state[index + 1];
+        if (index - 1 >= 0) state ^= (1 << index - 1);
+        if (index + 1 < LIGHTS) state ^= (1 << index + 1);
 
         toggleSound.start();
-
     }
 
-    private void Reset()
+    private void Generate()
     {
-        for (var i = 0; i < state.Length; i++)
-        {
-            state[i] = false;
-        }
-    }
-
-    private void Generate(bool[] state)
-    {
-        var count = 0;
-
-        Reset();
-
-        while (!Validate(state))
-        {
-            // toggle random bits
-            for (var i = 0; i < state.Length; i++)
-            {
-                state[i] = UnityEngine.Random.value >= 0.5f;
-                count += state[i] ? 1 : 0;
-            }
-
-            // do not generate empty or full states
-            if (count == 0 || count == 5)
-                continue;
-        }
+        var index = UnityEngine.Random.Range(0, LIGHTS);
+        state = solutions[index];
     }
 
     public void Interacted(LightPuzzleInteraction interaction)
     {
         var index = Array.FindIndex(items, x => x == interaction);
         
-        Toggle(state, index);
+        Toggle(index);
 
         if (Synchronize())
         {
